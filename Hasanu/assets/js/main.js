@@ -19,7 +19,3 @@ modalContainer.addEventListener('click', function(event) {
 function closeBuytickets() {
     modal.classList.remove('open')
 }
-
-function demo() {
-    modal.classList.remove('open')
-}
