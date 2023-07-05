@@ -786,6 +786,27 @@ body {
     text-decoration: none;
 }
 
+.odermenu {
+    position: relative;
+}
+
+.d {
+    display: none;
+    position: absolute;
+    top: 10px;
+    list-style: none;
+    text-align: left;
+    padding: 10px;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    color: #000;
+}
+
+.odermenu:hover .d {
+    display: block;
+}
+
 
 /*  */
 
@@ -795,7 +816,7 @@ body {
 
 /*  */
 
-.header__logo.img_logo:hover {
+.header__logo.img_logo:focus {
     animation-name: hinge;
     animation-duration: 2s;
     opacity: 0;
@@ -816,7 +837,7 @@ body {
     animation-duration: 1s;
 }
 
-.phoneimg:hover {
+.phoneimg:focus {
     animation-name: shakeX;
     animation-duration: 1s;
     animation-iteration-count: 1;
@@ -854,7 +875,6 @@ body {
     animation-name: example;
     animation-duration: 5s;
     animation-iteration-count: 999;
-    padding-bottom: 100px;
 }
 
 .copyright p:hover {

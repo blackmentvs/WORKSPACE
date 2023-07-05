@@ -33,10 +33,8 @@
     .hide-on-mobile {
         display: none;
     }
-    .navbar__menu--list {
+    .menu__bg__content {
         display: none;
-        text-align: center;
-        width: 100%;
     }
     .navbar__logo {
         display: none;
@@ -47,11 +45,7 @@
     .header__social {
         display: none;
     }
-    .call__text {
+    /* .call__text {
         justify-content: center;
-    }
-    .header_top_menu {
-        display: flex;
-        justify-content: center;
-    }
+    } */
 }

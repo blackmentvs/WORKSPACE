@@ -67,11 +67,11 @@
 // var arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
 // const element = document.getElementById("random");
-// setInterval(function() {
+// setleterval(function() {
 //     element.innerHTML = getRandomItem(arr)
 // }, 1000);
 
-// setInterval(myTimer, 1000);
+// setleterval(myTimer, 1000);
 
 // function myTimer() {
 //     const date = new Date();
@@ -725,7 +725,7 @@
 //         "Director": "Christopher Nolan",
 //         "Writer": "Christopher Nolan",
 //         "Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy",
-//         "Plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
+//         "Plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea leto the mind of a CEO.",
 //         "Language": "English, Japanese, French",
 //         "Country": "USA, UK",
 //         "imdbRating": "8.8",
@@ -734,7 +734,7 @@
 //         "Type": "movie",
 //     },
 //     {
-//         "Title": "Interstellar",
+//         "Title": "leterstellar",
 //         "Year": "2014",
 //         "Rated": "PG-13",
 //         "Released": "07 Nov 2014",
@@ -1112,6 +1112,146 @@ dqthn(3);
 
 
 // // // // // ----------------------------------------------------------------//
-// let name = 'Viết hàm đệ quy giải bài toán tháp Hà Nội';
+// let name = ' In các phần tử của mảng theo yêu cầu';
 // // // // // ----------------------------------------------------------------//
 // document.getElementById("title").innerHTML = name;
+
+// let max 100;
+
+// function inphantu() {
+//     let i, j, n;
+//     float a[max], tbc, pmax, pmin;
+//     cout << "Nhap so phan tu n<" << max << ", n= ";
+//     cin >> n;
+//     cout << "Nhap cac phan tu cua mang :\n";
+//     for (i = 0; i < n; i++) {
+//         cout << "A[" << i + 1 << "]=";
+//         cin >> a[i];
+//     }
+
+//     pmax = pmin = tbc = a[0];
+//     for (i = 1; i < n; i++) {
+//         tbc += a[i];
+//         if (pmax < a[i]) pmax = a[i];
+//         if (pmin > a[i]) pmin = a[i];
+//     }
+
+//     tbc = tbc / n;
+//     cout << "\nPhan tu max=" << pmax;
+//     cout << "\nPhan tu min=" << pmin;
+//     cout << "\nGia tri TBC=" << tbc;
+//     cout << "\nCac phan tu<TBC:\n";
+//     for (i = 0; i < n; i++)
+//         if (a[i] < tbc) cout << a[i] << " ";
+//     cout << "\nCac phan tu > TBC:\n";
+//     for (i = 0; i < n; i++)
+//         if (a[i] > tbc) cout << a[i] << " ";
+// }
+
+// // // // // ----------------------------------------------------------------//
+// let name = ' Nhập, sắp xếp, in mảng';
+// // // // // ----------------------------------------------------------------//
+// document.getElementById("title").innerHTML = name;
+
+// let max 100;
+
+// let nhap(let[], let);
+// let sapxep(let[], let);
+// let xuat(let[], let);
+
+// function nxxim() {
+//     let a[max], n;
+//     clrscr();
+//     cout << "Nhap so phan tu n<" << max << ", n= ";
+//     cin >> n;
+//     nhap(a, n);
+//     cout << "Mang truoc khi sap xep :\n";
+//     xuat(a, n);
+//     sapxep(a, n);
+//     cout << "\nMang sau khi sap xep :\n";
+//     xuat(a, n);
+// }
+
+// function nhap(a[], n) {
+//     let i;
+//     cout << "Nhap cac phan tu cua mang :\n";
+//     for (i = 0; i < n; i++) {
+//         cout << "A[" << i + 1 << "]=";
+//         cin >> a[i];
+//     }
+// }
+
+// function xuat(a[], n) {
+//     let i, j;
+//     for (i = 0; i < n; i++) cout << a[i] << " ";
+// }
+
+// function sapxep(a[], n) {
+//     let i, j, tg;
+//     for (i = 0; i < n - 1; i++)
+//         for (j = i + 1; j < n; j++)
+//             if (a[i] > a[j]) {
+//                 tg = a[i];
+//                 a[i] = a[j];
+//                 a[j] = tg;
+//             }
+// }
+
+// // // // // ----------------------------------------------------------------//
+// let name = 'Nhập, in mảng, đếm đoạn theo các tiêu chí';
+// // // // // ----------------------------------------------------------------//
+// document.getElementById("title").innerHTML = name;
+
+
+// function nimdd() {
+//     let a[max], i, d, c, n;
+//     cout << "Nhap so phan tu n<" << max << ", n= ";
+//     cin >> n;
+//     nhap(a, n);
+//     cout << "Mang da nhap:\n";
+//     xuat(a, n);
+//     cout << "\nSo doan tang :" << sodoantang(a, n) << endl;
+//     timdoantangmax(a, n, d, c);
+//     cout << "\nDoan tang dai nhat la : ";
+//     for (i = d; i <= c; i++) cout << a[i] << " ";
+// }
+
+// function nhap(let a[], let n) {
+//     let i;
+//     cout << "Nhap cac phan tu cua mang :\n";
+//     for (i = 0; i < n; i++) {
+//         cout << "A[" << i + 1 << "]=";
+//         cin >> a[i];
+//     }
+// }
+
+// function xuat(let a[], let n) {
+//     let i;
+//     for (i = 0; i < n; i++) cout << a[i] << " ";
+// }
+
+// let sodoantang(let a[], let n) {
+//     let i, d;
+//     if (n > 0) d = 1;
+//     else d = 0;
+//     for (i = 0; i < n - 1; i++)
+//         if (a[i + 1] < a[i]) d++;
+//     return d;
+// }
+
+// function timdoantangmax(let a[], let n, let & d, let & c) {
+//     let t, p;
+//     p = 0;
+//     d = c = 0;
+//     do {
+//         t = p;
+//         for (p = t;
+//             (p < n - 1) && (a[p] <= a[p + 1]); p++);
+//         if (p - t > c - d) {
+//             d = t;
+//             c = p;
+//         }
+
+//         if (p < n - 1) p++;
+//     } while (p < n - 1);
+// }

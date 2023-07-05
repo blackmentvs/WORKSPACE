@@ -4116,21 +4116,21 @@
             left: 0px;
             top: 0px;
         }
-        25% {
+        /* 25% {
             background-color: orange;
             left: 50%;
             transform: translateX(-50%);
-        }
+        } */
         50% {
             background-color: yellow;
             left: 100%;
             transform: translateX(-100%);
         }
-        75% {
+        /* 75% {
             background-color: green;
             left: 50%;
             transform: translateX(-50%);
-        }
+        } */
         100% {
             background-color: blue;
             left: 0px;
