@@ -1,0 +1,59 @@
+:root {
+    --body1-H: 100px
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+#title {
+    font-size: 2rem;
+    line-height: 50px;
+    text-align: center;
+    color: #f7efef;
+    background-color: #303329;
+}
+
+#calc {
+    height: 300px;
+    width: 100%;
+    color: #f7efef;
+    background-color: #915252;
+    font-size: 2rem;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.calc__body {
+    font-size: 2rem;
+    line-height: 50px;
+    text-align: center;
+    color: #f7efef;
+}
+
+#calc__body1 {
+    background-color: #da1313;
+}
+
+#calc__body2 {
+    background-color: #816464;
+}
+
+#calc__body3 {
+    background-color: #14d34d;
+}
+
+#calc__body4 {
+    background-color: #0e6327;
+}
+
+#calc__body5 {
+    background-color: #c2539d;
+}
+
+#calc__body6 {
+    background-color: #8fac0e;
+}

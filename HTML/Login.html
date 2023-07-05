@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Đăng Nhập</title>
+    <link rel="shortcut icon" type="image/png" href="/HTML/Image/Ico.png" />
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <div class="form-tt">
+        <center>
+            <h1>Đăng nhập</h1>
+        </center>
+        <form action="#" method="post" name="dang-ky">
+
+            <input type="text" name="username" placeholder="Nhập tên đăng ký" />
+            <input type="password" name="password" placeholder="Nhập mật khẩu" />
+            <input type="checkbox" id="checkbox" name="checkbox"><label class="checkbox-text">Ghi Nhớ đăng nhập</label>
+            <div class="clearfix">
+                <button type="submit" class="loginbtn">Đăng Nhập</button>
+            </div>
+            <center><a href="Lostpassword.html"><label class="lostbtn">Quên mật khẩu?</label></a></center>
+            <center><a href="index.html"><label class="indbtn">Trang Chủ</label></a></center>
+        </form>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+            * {
+                box-sizing: border-box
+            }
+            
+            body {
+                font-family: 'Noto Sans JP', sans-serif;
+            }
+            
+            h1,
+            label {
+                color: DodgerBlue;
+            }
+            
+            input[type=text],
+            input[type=password] {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                display: inline-block;
+                border: none;
+                width: 100%;
+                resize: vertical;
+                padding: 15px;
+                border-radius: 15px;
+                border: 0;
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            input[type=text]:focus,
+            input[type=password]:focus {
+                outline: none;
+            }
+            
+            hr {
+                border: 1px solid #f1f1f1;
+                margin-bottom: 25px;
+            }
+            
+            button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 10px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                opacity: 0.8;
+            }
+            
+            button:hover {
+                opacity: 0.5;
+            }
+            
+            .cancelbtn {
+                padding: 14px 20px;
+                background-color: #f44336;
+            }
+            
+            .lostbtn {
+                padding: 3px 10px;
+                border-radius: 15px;
+                background-color: #e6cac8;
+                box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            .indbtn {
+                padding: 3px 10px;
+                border-radius: 15px;
+                background-color: #e6cac8;
+                box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            .loginbtn {
+                float: left;
+                width: 100%;
+                border-radius: 15px;
+                border: 0;
+                box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            .container {
+                padding: 16px;
+            }
+            
+            .clearfix::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+        </style>
+    </div>
+</body>
+
+</html>

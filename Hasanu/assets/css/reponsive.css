@@ -1,0 +1,57 @@
+@media (min-width: 1023px) {
+    .hide-on-pc {
+        display: none;
+    }
+}
+
+
+/* Mobile & Tablet */
+
+@media (max-width:1023px) {
+     :root {
+        --header-height: 70px;
+        --navbar-height: 0px;
+    }
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+}
+
+
+/* Tablet */
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .navbar__menu--list {
+        display: none;
+        text-align: center;
+        width: 100%;
+    }
+    .navbar__logo {
+        display: none;
+    }
+    .call__text--link {
+        margin: 0;
+    }
+    .header__social {
+        display: none;
+    }
+    .call__text {
+        justify-content: center;
+    }
+    .header_top_menu {
+        display: flex;
+        justify-content: center;
+    }
+}

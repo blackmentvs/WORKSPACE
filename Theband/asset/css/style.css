@@ -1,0 +1,531 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/*  nguyên tắc dựng base
+    1. từ ngoài vào trong
+    2. từ phải sang trái
+    3. tổng quan đến chi tiết
+ */
+
+
+/* 
+    1. vị trí
+    2. kích thước (width , height)
+    3. màu sắc
+    4. kiểu dáng (kiểu chử, tròn , vuông...)
+ */
+
+
+/* html {
+    font-family: Helvetica, Arial, sans-serif;
+} */
+
+html,
+body {
+    font-size: 15px;
+    line-height: 1.5;
+    font-family: "Lato", sans-serif;
+    scroll-behavior: smooth;
+}
+
+.clear {
+    clear: both;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.opacity {
+    opacity: 0.6;
+}
+
+.medium {
+    font-size: 15px;
+    margin: 15px 0px;
+}
+
+.pull-right {
+    float: right;
+}
+
+.margin-right {
+    margin-right: 16px!important;
+}
+
+.mt8px {
+    margin-top: 8px!important;
+}
+
+.mt16px {
+    margin-top: 16px !important;
+}
+
+.mb8px {
+    margin-bottom: 8px !important;
+}
+
+.mb16px {
+    margin-bottom: 16px!important;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-half {
+    width: 50%;
+}
+
+.col-full {
+    width: 100%;
+}
+
+.col-thirt {
+    width: 33.33333%;
+}
+
+.img {
+    vertical-align: middle;
+    border-style: none
+}
+
+.btn {
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 16px;
+    font-size: 15px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    /* -webkit-appearance: none; */
+}
+
+.btn:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+
+/* #main {} */
+
+#header {
+    height: 46.5px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    position: fixed;
+    z-index: 1;
+}
+
+
+/* #header .search-btn {} */
+
+#header .bars-btn {
+    display: none;
+}
+
+#header .bars-btn:hover .bars-icon {
+    color: #000;
+}
+
+#header .bars-btn:hover {
+    background-color: #ccc;
+}
+
+#header .bars-icon,
+#header .search-icon {
+    color: #fff;
+    font-size: 15px;
+    line-height: 46.5px;
+    padding: 0 21px;
+}
+
+#header .search-btn:hover {
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+#nav {
+    display: inline-block;
+}
+
+#nav>li {
+    display: inline-block;
+}
+
+#nav li {
+    position: relative;
+}
+
+#nav>li>a {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#nav li a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 24px;
+}
+
+#nav>li:hover>a,
+#nav .subnav li:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav,
+.subnav {
+    list-style-type: none;
+}
+
+#nav .subnav {
+    display: none;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#nav>li:hover .subnav {
+    display: block;
+}
+
+#nav .subnav a {
+    color: #000;
+    padding: 0px 14px;
+    line-height: 38px;
+}
+
+#nav .downbtn {
+    font-size: 14px;
+}
+
+#slider {
+    position: relative;
+    max-width: 2000px;
+    margin: 46px auto 0px;
+    padding-top: 50%;
+    background: url(../img/chicago.jpg) top center / cover no-repeat;
+    color: #fff;
+}
+
+#slider .text-content {
+    position: absolute;
+    color: #fff;
+    bottom: 47px;
+    width: 100%;
+    text-align: center;
+}
+
+#slider .text-content h3 {
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+#slider .text-content p {
+    font-weight: bolder;
+    font-size: 15px;
+    margin: 15px;
+    text-shadow: 0px 0px 2px #000;
+}
+
+#content {
+    margin: 48px auto 0px;
+}
+
+#content .content-section {
+    width: 800px;
+    max-width: 100%;
+    padding: 64px 0px 112px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#content .section-heading {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 10px 0px;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+#content .section-sub-heading {
+    font-style: italic;
+    font-size: 15px;
+    margin: 15px 0px;
+    text-align: center;
+    opacity: 0.6;
+}
+
+#content .about-content {
+    text-align: justify;
+    line-height: 1.5;
+    margin: 15px 0px;
+}
+
+#content .member-list {
+    padding-top: 32px;
+}
+
+#content .member-name {
+    font-size: 15px;
+    margin: 15px 0px;
+}
+
+#content .member-img {
+    width: 60%;
+    line-height: 22.5px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.content-tuor {
+    background-color: #000;
+}
+
+.tickes-list {
+    margin-top: 40px;
+    list-style: none;
+    background-color: #fff;
+}
+
+.tickes-list li {
+    color: #757575;
+    padding: 8px 16px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.tickes-list .sold-out {
+    background-color: #f44336;
+    color: #fff;
+    padding: 4px;
+    margin-left: 16px;
+}
+
+.tickes-list .quantity {
+    float: right;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    padding: 0px 8px;
+    text-align: center;
+    line-height: 24px;
+    background-color: #000;
+    color: #fff;
+}
+
+.places-list {
+    margin-top: 16px;
+}
+
+.place-item {
+    width: 33.33333%;
+}
+
+.places-img {
+    width: 100%;
+    display: block;
+}
+
+.places-img:hover {
+    opacity: 0.6;
+}
+
+.place-body {
+    background-color: #fff;
+    padding: 16px;
+}
+
+.place-heading {
+    font-size: 15px;
+}
+
+.place-time {
+    margin: 15px 0px;
+    opacity: 0.6;
+}
+
+.place-decs {
+    margin: 15px 0px;
+    line-height: 1.6;
+}
+
+.contact-content {
+    margin-top: 48px;
+}
+
+.contact-info {
+    line-height: 1.5;
+}
+
+.contact-info a {
+    opacity: 0.5;
+}
+
+.contact-info a:hover {
+    opacity: 1;
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    outline: none;
+}
+
+.map-section img {
+    max-width: 100%;
+    width: 100%;
+    filter: grayscale(50%);
+}
+
+#footer {
+    padding: 64px 16px;
+}
+
+#footer i {
+    color: black;
+    background-color: #fff;
+    font-size: 24px;
+}
+
+#footer .socicals a:hover {
+    opacity: 0.6;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal-container {
+    width: 900px;
+    max-width: calc(100% - 100px);
+    min-height: 200px;
+    background: #fff;
+    position: relative;
+    animation: modalFadein ease 0.5s;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #000;
+    background-color: #ccc;
+    opacity: 1;
+}
+
+.modal-header {
+    background-color: #009688;
+    color: #fff;
+    height: 130px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 4px;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.modal-input {
+    display: block;
+    padding: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+#buy-tickets {
+    border: none;
+    color: #fff;
+    background-color: #009688;
+    width: 100%;
+    padding: 16px;
+    margin: 16px 0;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+#buy-tickets:hover {
+    color: #000;
+    background-color: #ccc;
+    opacity: 1;
+}
+
+.modal-footer {
+    padding: 16px;
+    text-align: right;
+}
+
+.modal-footer a {
+    color: #2196F3;
+}
+
+@keyframes modalFadein {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
