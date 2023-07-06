@@ -1076,38 +1076,38 @@
 
 
 // // // // ----------------------------------------------------------------//
-let name = 'Viết hàm đệ quy giải bài toán tháp Hà Nội';
+// let name = 'Viết hàm đệ quy giải bài toán tháp Hà Nội';
 // // // // ----------------------------------------------------------------//
-document.getElementById("title").innerHTML = name;
+// document.getElementById("title").innerHTML = name;
 
-let d;
+// let d;
 
-function dqthn(n) {
-    d = 0;
-    doi(n, 'A', 'B', 'C');
-    document.getElementById("calc__body1").innerHTML = `Tổng số lần chuyển = ${d}`;
-}
+// function dqthn(n) {
+//     d = 0;
+//     doi(n, 'A', 'B', 'C');
+//     document.getElementById("calc__body1").innerHTML = `Tổng số lần chuyển = ${d}`;
+// }
 
-function doi(n, a, b, c) {
-    if (n == 1) {
-        console.log(`Lần ${++d} : Từ Tháp ${a} Sang Tháp ${b} `);
-    } else {
-        console.log("Giá trị Tháp A:", a)
-        console.log("Giá trị Tháp B:", b)
-        console.log("Giá trị Tháp C:", c)
-        doi(n - 1, a, c, b);
-        console.log("Giá trị Tháp A1:", a)
-        console.log("Giá trị Tháp B1:", b)
-        console.log("Giá trị Tháp C1:", c)
-        doi(1, a, b, c);
-        console.log("Giá trị Tháp A2:", a)
-        console.log("Giá trị Tháp B2:", b)
-        console.log("Giá trị Tháp C2:", c)
-        doi(n - 1, c, b, a);
+// function doi(n, a, b, c) {
+//     if (n == 1) {
+//         console.log(`Lần ${++d} : Từ Tháp ${a} Sang Tháp ${b} `);
+//     } else {
+//         console.log("Giá trị Tháp A:", a)
+//         console.log("Giá trị Tháp B:", b)
+//         console.log("Giá trị Tháp C:", c)
+//         doi(n - 1, a, c, b);
+//         console.log("Giá trị Tháp A1:", a)
+//         console.log("Giá trị Tháp B1:", b)
+//         console.log("Giá trị Tháp C1:", c)
+//         doi(1, a, b, c);
+//         console.log("Giá trị Tháp A2:", a)
+//         console.log("Giá trị Tháp B2:", b)
+//         console.log("Giá trị Tháp C2:", c)
+//         doi(n - 1, c, b, a);
 
-    }
-}
-dqthn(3);
+//     }
+// }
+// dqthn(3);
 
 
 
@@ -1198,60 +1198,59 @@ dqthn(3);
 // }
 
 // // // // // ----------------------------------------------------------------//
-// let name = 'Nhập, in mảng, đếm đoạn theo các tiêu chí';
+let name = 'Nhập, in mảng, đếm đoạn theo các tiêu chí';
 // // // // // ----------------------------------------------------------------//
-// document.getElementById("title").innerHTML = name;
+document.getElementById("title").innerHTML = name;
 
 
-// function nimdd() {
-//     let a[max], i, d, c, n;
-//     cout << "Nhap so phan tu n<" << max << ", n= ";
-//     cin >> n;
-//     nhap(a, n);
-//     cout << "Mang da nhap:\n";
-//     xuat(a, n);
-//     cout << "\nSo doan tang :" << sodoantang(a, n) << endl;
-//     timdoantangmax(a, n, d, c);
-//     cout << "\nDoan tang dai nhat la : ";
-//     for (i = d; i <= c; i++) cout << a[i] << " ";
-// }
+function nimdd(n) {
+    let a[max], i, d, c;
+    nhap(a, n);
+    cout << "Mang da nhap:\n";
+    xuat(a, n);
+    cout << "\nSo doan tang :" << sodoantang(a, n) << endl;
+    timdoantangmax(a, n, d, c);
+    cout << "\nDoan tang dai nhat la : ";
+    for (i = d; i <= c; i++) cout << a[i] << " ";
+}
 
-// function nhap(let a[], let n) {
-//     let i;
-//     cout << "Nhap cac phan tu cua mang :\n";
-//     for (i = 0; i < n; i++) {
-//         cout << "A[" << i + 1 << "]=";
-//         cin >> a[i];
-//     }
-// }
+function nhap(a[], n) {
+    let i;
+    for (i = 0; i < n; i++) {
+        cout << "A[" << i + 1 << "]=";
+        cin >> a[i];
+    }
+}
 
-// function xuat(let a[], let n) {
-//     let i;
-//     for (i = 0; i < n; i++) cout << a[i] << " ";
-// }
+function xuat(a[], n) {
+    let i;
+    for (i = 0; i < n; i++) {
+        a[i]
+    };
+}
 
-// let sodoantang(let a[], let n) {
-//     let i, d;
-//     if (n > 0) d = 1;
-//     else d = 0;
-//     for (i = 0; i < n - 1; i++)
-//         if (a[i + 1] < a[i]) d++;
-//     return d;
-// }
+let sodoantang(a[], n) {
+    let i, d;
+    if (n > 0) d = 1;
+    else d = 0;
+    for (i = 0; i < n - 1; i++)
+        if (a[i + 1] < a[i]) d++;
+    return d;
+}
 
-// function timdoantangmax(let a[], let n, let & d, let & c) {
-//     let t, p;
-//     p = 0;
-//     d = c = 0;
-//     do {
-//         t = p;
-//         for (p = t;
-//             (p < n - 1) && (a[p] <= a[p + 1]); p++);
-//         if (p - t > c - d) {
-//             d = t;
-//             c = p;
-//         }
+function timdoantangmax(a[], n, d, c) {
+    let t, p;
+    p = 0;
+    d = c = 0;
+    do {
+        t = p;
+        for (p = t;
+            (p < n - 1) && (a[p] <= a[p + 1]); p++);
+        if (p - t > c - d) {
+            d = t;
+            c = p;
+        }
 
-//         if (p < n - 1) p++;
-//     } while (p < n - 1);
-// }
+        if (p < n - 1) p++;
+    } while (p < n - 1);
+}
