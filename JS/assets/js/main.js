@@ -1250,7 +1250,6 @@ function timdoantangmax(a[], n, d, c) {
             d = t;
             c = p;
         }
-
         if (p < n - 1) p++;
     } while (p < n - 1);
 }

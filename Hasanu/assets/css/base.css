@@ -166,13 +166,14 @@ h3 {
     margin: 0;
 }
 
-h4,
+
+/* h4,
 h5 {
     font-weight: 300;
     margin: 0;
     line-height: 2rem;
     font-family: 'Pacifico', cursive;
-}
+} */
 
 h1 {
     font-size: 3rem;
@@ -340,6 +341,30 @@ p:last-child {
     position: relative;
     z-index: 10;
     animation: growth linear 0.1s;
+}
+
+
+/*  */
+
+.btnorder {
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6rem;
+}
+
+.btnorder.btn--primary {
+    color: var(--white-color);
+    background-color: var( --primary-color);
 }
 
 
