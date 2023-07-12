@@ -22,33 +22,33 @@ function closeBuytickets() {
 //end booking
 //begin menubar
 
-var header = document.getElementById('header')
-var menubars = document.getElementById('menu-bars')
-menubars.onclick = function() {
-    var iClose = header.clientHeight === 47;
-    if (iClose) {
-        header.style.height = 'auto';
-    } else {
-        header.style.height = '47px';
-    }
-}
-menuItems = document.querySelectorAll('#nav li a[href*="#"]')
-for (var i = 0; i < menuItems.length; i++) {
-    var menuItem = menuItems[i];
-    menuItem.onclick = function(event) {
-        var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
-        if (isParentMenu) {
-            event.preventDefault();
-        } else {
-            header.style.height = null;
-        }
-    }
-}
+// var header = document.getElementById('header')
+// var menubars = document.getElementById('menu-bars')
+// menubars.onclick = function() {
+//     var iClose = header.clientHeight === 47;
+//     if (iClose) {
+//         header.style.height = 'auto';
+//     } else {
+//         header.style.height = '47px';
+//     }
+// }
+// menuItems = document.querySelectorAll('#nav li a[href*="#"]')
+// for (var i = 0; i < menuItems.length; i++) {
+//     var menuItem = menuItems[i];
+//     menuItem.onclick = function(event) {
+//         var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+//         if (isParentMenu) {
+//             event.preventDefault();
+//         } else {
+//             header.style.height = null;
+//         }
+//     }
+// }
 //end bar
 // 
 (function() {
-    // Add to Cart Interaction - by CodyHouse.co
     var cart = document.getElementsByClassName('js-cd-cart');
+    console.log('ten class', cart);
     if (cart.length > 0) {
         var cartAddBtns = document.getElementsByClassName('js-cd-add-to-cart'),
             cartBody = cart[0].getElementsByClassName('cd-cart__body')[0],
@@ -138,7 +138,7 @@ for (var i = 0; i < menuItems.length; i++) {
                 setTimeout(function() {
                     cartBody.scrollTop = 0;
                     //check if cart empty to hide it
-                    if (Number(cartCountItems[0].innerText) == 0) Util.addClass(cart[0], 'cd-cart--empty');
+                    if (Number(cartCountItems[0].innerText) == 0 || Number(cartCountItems[0].innerText) <= 0) Util.addClass(cart[0], 'cd-cart--empty');
                 }, 500);
             } else {
                 Util.addClass(cart[0], 'cd-cart--open');
@@ -151,7 +151,7 @@ for (var i = 0; i < menuItems.length; i++) {
             // replace productId, productName, price and url with your real product info
             // you should also check if the product was already in the cart -> if it is, just update the quantity
             productId = productId + 1;
-            var productAdded = '<li class="cd-cart__product"><div class="cd-cart__image"><a href="#0"><img src="assets/img/product-preview.png" alt="placeholder"></a></div><div class="cd-cart__details"><h3 class="truncate"><a href="#0">Product Name</a></h3><span class="cd-cart__price">$15.99</span><div class="cd-cart__actions"><a href="#0" class="cd-cart__delete-item">Delete</a><div class="cd-cart__quantity"><label for="cd-product-' + productId + '">Qty</label><span class="cd-cart__select"><select class="reset" id="cd-product-' + productId + '" name="quantity"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select><svg class="icon" viewBox="0 0 12 12"><polyline fill="none" stroke="currentColor" points="2,4 6,8 10,4 "/></svg></span></div></div></div></li>';
+            var productAdded = '<li class="cd-cart__product"><div class="cd-cart__image"><a href="#0"><img src="assets/img/product-preview.png" alt="placeholder"></a></div><div class="cd-cart__details"><h3 class="truncate"><a href="#0">Product Name</a></h3><span class="cd-cart__price">$25.99</span><div class="cd-cart__actions"><a href="#0" class="cd-cart__delete-item">Delete</a><div class="cd-cart__quantity"><label for="cd-product-' + productId + '">Qty</label><span class="cd-cart__select"><select class="reset" id="cd-product-' + productId + '" name="quantity"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select><svg class="icon" viewBox="0 0 12 12"><polyline fill="none" stroke="currentColor" points="2,4 6,8 10,4 "/></svg></span></div></div></div></li>';
             cartList.insertAdjacentHTML('beforeend', productAdded);
         };
 
@@ -240,207 +240,3 @@ for (var i = 0; i < menuItems.length; i++) {
         };
     }
 })();
-//add cart
-
-var shoppingCart = (function() {
-
-    cart = [];
-
-    // Constructor
-    function Item(name, price, count) {
-        this.name = name;
-        this.price = price;
-        this.count = count;
-    }
-
-    // Save cart
-    function saveCart() {
-        sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
-    }
-
-    // Load cart
-    function loadCart() {
-        cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
-    }
-    if (sessionStorage.getItem("shoppingCart") != null) {
-        loadCart();
-    }
-
-
-    // =============================
-    // Public methods and propeties
-    // =============================
-    var obj = {};
-
-    // Add to cart
-    obj.addItemToCart = function(name, price, count) {
-            for (var item in cart) {
-                if (cart[item].name === name) {
-                    cart[item].count++;
-                    saveCart();
-                    return;
-                }
-            }
-            var item = new Item(name, price, count);
-            cart.push(item);
-            saveCart();
-        }
-        // Set count from item
-    obj.setCountForItem = function(name, count) {
-        for (var i in cart) {
-            if (cart[i].name === name) {
-                cart[i].count = count;
-                break;
-            }
-        }
-    };
-    // Remove item from cart
-    obj.removeItemFromCart = function(name) {
-        for (var item in cart) {
-            if (cart[item].name === name) {
-                cart[item].count--;
-                if (cart[item].count === 0) {
-                    cart.splice(item, 1);
-                }
-                break;
-            }
-        }
-        saveCart();
-    }
-
-    // Remove all items from cart
-    obj.removeItemFromCartAll = function(name) {
-        for (var item in cart) {
-            if (cart[item].name === name) {
-                cart.splice(item, 1);
-                break;
-            }
-        }
-        saveCart();
-    }
-
-    // Clear cart
-    obj.clearCart = function() {
-        cart = [];
-        saveCart();
-    }
-
-    // Count cart 
-    obj.totalCount = function() {
-        var totalCount = 0;
-        for (var item in cart) {
-            totalCount += cart[item].count;
-        }
-        return totalCount;
-    }
-
-    // Total cart
-    obj.totalCart = function() {
-        var totalCart = 0;
-        for (var item in cart) {
-            totalCart += cart[item].price * cart[item].count;
-        }
-        return Number(totalCart.toFixed(2));
-    }
-
-    // List cart
-    obj.listCart = function() {
-        var cartCopy = [];
-        for (i in cart) {
-            item = cart[i];
-            itemCopy = {};
-            for (p in item) {
-                itemCopy[p] = item[p];
-
-            }
-            itemCopy.total = Number(item.price * item.count).toFixed(2);
-            cartCopy.push(itemCopy)
-        }
-        return cartCopy;
-    }
-
-    // cart : Array
-    // Item : Object/Class
-    // addItemToCart : Function
-    // removeItemFromCart : Function
-    // removeItemFromCartAll : Function
-    // clearCart : Function
-    // countCart : Function
-    // totalCart : Function
-    // listCart : Function
-    // saveCart : Function
-    // loadCart : Function
-    return obj;
-})();
-
-
-// *****************************************
-// Triggers / Events
-// ***************************************** 
-// Add item
-$('.add-to-cart').click(function(event) {
-    event.preventDefault();
-    var name = $(this).data('name');
-    var price = Number($(this).data('price'));
-    shoppingCart.addItemToCart(name, price, 1);
-    displayCart();
-});
-
-// Clear items
-$('.clear-cart').click(function() {
-    shoppingCart.clearCart();
-    displayCart();
-});
-
-
-function displayCart() {
-    var cartArray = shoppingCart.listCart();
-    var output = "";
-    for (var i in cartArray) {
-        output += "<tr>" +
-            "<td>" + cartArray[i].name + "</td>" +
-            "<td>(" + cartArray[i].price + ")</td>" +
-            "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>" +
-            "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>" +
-            "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>" +
-            "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button></td>" +
-            " = " +
-            "<td>" + cartArray[i].total + "</td>" +
-            "</tr>";
-    }
-    $('.show-cart').html(output);
-    $('.total-cart').html(shoppingCart.totalCart());
-    $('.total-count').html(shoppingCart.totalCount());
-}
-
-// Delete item button
-
-$('.show-cart').on("click", ".delete-item", function(event) {
-    var name = $(this).data('name')
-    shoppingCart.removeItemFromCartAll(name);
-    displayCart();
-})
-
-
-// -1
-$('.show-cart').on("click", ".minus-item", function(event) {
-        var name = $(this).data('name')
-        shoppingCart.removeItemFromCart(name);
-        displayCart();
-    })
-    // +1
-$('.show-cart').on("click", ".plus-item", function(event) {
-    var name = $(this).data('name')
-    shoppingCart.addItemToCart(name);
-    displayCart();
-})
-
-// Item count input
-$('.show-cart').on("change", ".item-count", function(event) {
-    var name = $(this).data('name');
-    var count = Number($(this).val());
-    shoppingCart.setCountForItem(name, count);
-    displayCart();
-});
-
-displayCart();

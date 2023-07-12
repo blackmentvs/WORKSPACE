@@ -402,7 +402,7 @@ p:last-child {
     padding: 0 8px;
 }
 
-.btn-primary {
+.btn--primary {
     background-color: #E7A331;
     color: #ffffff;
     border: 2px solid #E7A331;

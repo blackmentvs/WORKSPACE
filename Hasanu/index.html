@@ -5,13 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- cart -->
+    <script>
+        document.getElementsByTagName("html")[0].className += " js";
+    </script>
+    <link rel="stylesheet" href="./assets/css/cart.css">
+    <!-- End cart -->
+    <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="/assets/images/Favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/animate/animate.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
-    <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/reponsive.css">
     <link rel="stylesheet" href="./assets/fonts/awesome/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -34,7 +40,7 @@
                             <a class="call__text--link tellphone" href="tel:098832104"><i class="call__text--icon fa fa-phone"></i>0988321904</a>
                         </div>
                         <div class="header__social text-center col l-2">
-                            <div class="header__cart">
+                            <!-- <div class="header__cart">
                                 <div class="header__cart-wrap">
                                     <i class="header__cart-icon fas fa-shopping-cart "></i>
                                     <span class="header__cart-notice">12</span>
@@ -149,8 +155,7 @@
                                         <a href="#" class="header__cart-view-cart btn btn--primary">Xem giỏ hàng</a>
                                     </div>
                                 </div>
-                            </div>
-
+                            </div> -->
                         </div>
                         <div class="header__social text-right col l-2">
                             <a href=""><i class="header__social--icon fa fa-facebook"></i></a>
@@ -253,6 +258,7 @@
             </div>
         </div>
     </section>
+    <!--End features -->
     <section id="menu" class="menu">
         <div class="grid wide">
             <div class="row menu__container ">
@@ -267,7 +273,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Bạch tuộc nướng</h6>
                                 <p class="product__price">80K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="80,000">Add To Cart</a>
                             </div>
                         </div>
                         <div class="col c-3 single__menu__text">
@@ -275,7 +281,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Sò lông nướng</h6>
                                 <p class="product__price">30K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="30,000">Add To Cart</a>
                             </div>
                         </div>
                         <div class="col c-3 single__menu__text">
@@ -283,7 +289,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Ốc hương</h6>
                                 <p class="product__price">50K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="50,000">Add To Cart</a>
                             </div>
                         </div>
                         <div class="col c-3 single__menu__text">
@@ -291,7 +297,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Nghêu hấp sả</h6>
                                 <p class="product__price">30K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="30,000">Add To Cart</a>
                             </div>
                         </div>
                     </div>
@@ -301,7 +307,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Càng ghẹ rang</h6>
                                 <p class="product__price">30K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="30,000">Add To Cart</a>
                             </div>
                         </div>
                         <div class="col c-3 single__menu__text">
@@ -309,7 +315,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Tôm nướng</h6>
                                 <p class="product__price">50K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="50,000">Add To Cart</a>
                             </div>
                         </div>
                         <div class="col c-3 single__menu__text">
@@ -317,7 +323,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Mực nướng</h6>
                                 <p class="product__price">Liên hệ</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="30,000">Add To Cart</a>
                             </div>
                         </div>
                         <div class="col c-3 single__menu__text">
@@ -326,7 +332,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Bạch tuộc nướng</h6>
                                 <p class="product__price">80K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="80,000">Add To Cart</a>
                             </div>
                         </div>
                     </div>
@@ -336,7 +342,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Bạch tuộc nướng</h6>
                                 <p class="product__price">80K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="30,000">Add To Cart</a>
                             </div>
                         </div>
                         <div class="col c-3 single__menu__text">
@@ -344,7 +350,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Bạch tuộc nướng</h6>
                                 <p class="product__price">80K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="30,000">Add To Cart</a>
                             </div>
                         </div>
                         <div class="col c-3 single__menu__text">
@@ -352,7 +358,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Bạch tuộc nướng</h6>
                                 <p class="product__price">80K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="30,000">Add To Cart</a>
                             </div>
                         </div>
                         <div class="col c-3 single__menu__text">
@@ -361,7 +367,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Bạch tuộc nướng</h6>
                                 <p class="product__price">80K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="30,000">Add To Cart</a>
                             </div>
                         </div>
                     </div>
@@ -372,7 +378,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Bạch tuộc nướng</h6>
                                 <p class="product__price">80K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="30,000">Add To Cart</a>
                             </div>
                         </div>
                         <div class="col c-3 single__menu__text">
@@ -381,7 +387,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Bạch tuộc nướng</h6>
                                 <p class="product__price">80K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="30,000">Add To Cart</a>
                             </div>
                         </div>
                         <div class="col c-3 single__menu__text">
@@ -390,7 +396,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Bạch tuộc nướng</h6>
                                 <p class="product__price">80K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="30,000">Add To Cart</a>
                             </div>
                         </div>
                         <div class="col c-3 single__menu__text">
@@ -399,7 +405,7 @@
                             <div class="menu__images__overlay text-center">
                                 <h6>Bạch tuộc nướng</h6>
                                 <p class="product__price ">80K</p>
-                                <a href="" class="btn btn-primary">Chọn</a>
+                                <a href="#0" class="btn btn--primary js-cd-add-to-cart" data-price="30,000">Add To Cart</a>
                             </div>
                         </div>
                     </div>
@@ -407,7 +413,42 @@
             </div>
         </div>
     </section>
-    <!--End features -->
+    <!-- menucart -->
+    <div class="cd-cart cd-cart--empty js-cd-cart">
+        <a href="#0" class="cd-cart__trigger text-replace">
+            Cart
+            <ul class="cd-cart__count"> <!-- cart items count -->
+                <li>0</li>
+                <li>0</li>
+            </ul> <!-- .cd-cart__count -->
+        </a>
+
+        <div class="cd-cart__content">
+            <div class="cd-cart__layout">
+                <header class="cd-cart__header">
+                    <h2>Cart</h2>
+                    <span class="cd-cart__undo">Item removed. <a href="#0">Undo</a></span>
+                </header>
+
+                <div class="cd-cart__body">
+                    <ul>
+                        <!-- products added to the cart will be inserted here using JavaScript -->
+                    </ul>
+                </div>
+
+                <footer class="cd-cart__footer">
+                    <a href="#0" class="cd-cart__checkout">
+                        <em>Checkout - $<span>0</span>
+                <svg class="icon icon--sm" viewBox="0 0 24 24"><g fill="none" stroke="currentColor"><line stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="3" y1="12" x2="21" y2="12"/><polyline stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="15,6 21,12 15,18 "/></g>
+                </svg>
+              </em>
+                    </a>
+                </footer>
+            </div>
+        </div>
+        <!-- .cd-cart__content -->
+    </div>
+    <!-- end menucart -->
     <!--Begin combo -->
     <section id="combo" class="combo">
         <div class="grid wide">
@@ -471,7 +512,7 @@
                             <h4> Đang phát triển ứng dụng trên </h4>
                             <h1>Mobile<span>Nhưng chưa biết phải viết như thế nào......</span></h1>
 
-                            <a href="#mobaileapps"><img class="phonelinkimg" src="assets/images/google.png" alt=""></a>
+                            <a href="./assets/images/ab.png"><img class="phonelinkimg" src="assets/images/google.png" alt=""></a>
                             <a href="#mobaileapps"><img class="phonelinkimg" src="assets/images/apps.png" alt=""></a>
                         </div>
                     </div>
@@ -695,6 +736,7 @@
         </div>
     </div> -->
     <!-- End modal--booking -->
+    <script src="assets/js/util.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/jquery-3.7.0.js"></script>
     <script>
