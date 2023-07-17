@@ -1203,53 +1203,116 @@ let name = 'Nhập, in mảng, đếm đoạn theo các tiêu chí';
 document.getElementById("title").innerHTML = name;
 
 
-function nimdd(n) {
-    let a[max], i, d, c;
-    nhap(a, n);
-    cout << "Mang da nhap:\n";
-    xuat(a, n);
-    cout << "\nSo doan tang :" << sodoantang(a, n) << endl;
-    timdoantangmax(a, n, d, c);
-    cout << "\nDoan tang dai nhat la : ";
-    for (i = d; i <= c; i++) cout << a[i] << " ";
-}
+// function nimdd(n) {
+//     let a[max], i, d, c;
+//     nhap(a, n);
+//     cout << "Mang da nhap:\n";
+//     xuat(a, n);
+//     cout << "\nSo doan tang :" << sodoantang(a, n) << endl;
+//     timdoantangmax(a, n, d, c);
+//     cout << "\nDoan tang dai nhat la : ";
+//     for (i = d; i <= c; i++) cout << a[i] << " ";
+// }
 
-function nhap(a[], n) {
-    let i;
+// function nhap(a[], n) {
+//     let i;
+//     for (i = 0; i < n; i++) {
+//         cout << "A[" << i + 1 << "]=";
+//         cin >> a[i];
+//     }
+// }
+
+// function xuat(a[], n) {
+//     let i;
+//     for (i = 0; i < n; i++) {
+//         a[i]
+//     };
+// }
+
+// let sodoantang(a[], n) {
+//     let i, d;
+//     if (n > 0) d = 1;
+//     else d = 0;
+//     for (i = 0; i < n - 1; i++)
+//         if (a[i + 1] < a[i]) d++;
+//     return d;
+// }
+
+// function timdoantangmax(a[], n, d, c) {
+//     let t, p;
+//     p = 0;
+//     d = c = 0;
+//     do {
+//         t = p;
+//         for (p = t;
+//             (p < n - 1) && (a[p] <= a[p + 1]); p++);
+//         if (p - t > c - d) {
+//             d = t;
+//             c = p;
+//         }
+//         if (p < n - 1) p++;
+//     } while (p < n - 1);
+// }
+
+function nhap(n) {
+    int i, j, t;
     for (i = 0; i < n; i++) {
-        cout << "A[" << i + 1 << "]=";
-        cin >> a[i];
+        i + 1
+        for (j = 0; j < n; j++) {
+            cout << "A[" << i + 1 << "," << j + 1 << "]=";
+            cin >> t;
+            a[i][j] = t;
+        }
     }
 }
 
-function xuat(a[], n) {
-    let i;
+function xuat() {
+    int i, j;
     for (i = 0; i < n; i++) {
-        a[i]
-    };
-}
-
-let sodoantang(a[], n) {
-    let i, d;
-    if (n > 0) d = 1;
-    else d = 0;
-    for (i = 0; i < n - 1; i++)
-        if (a[i + 1] < a[i]) d++;
-    return d;
-}
-
-function timdoantangmax(a[], n, d, c) {
-    let t, p;
-    p = 0;
-    d = c = 0;
-    do {
-        t = p;
-        for (p = t;
-            (p < n - 1) && (a[p] <= a[p + 1]); p++);
-        if (p - t > c - d) {
-            d = t;
-            c = p;
+        cout << endl;
+        for (j = 0; j < n; j++) {
+            cout << " ";
+            cout << a[i][j];
         }
-        if (p < n - 1) p++;
-    } while (p < n - 1);
+    }
+}
+
+function doicot(int k, int t) {
+    int i;
+    float p;
+    for (i = 0; i < n; i++) {
+        p = a[i][k];
+        a[i][k] = a[i][t];
+        a[i][t] = p;
+    }
+}
+
+function truhang(int h, int r) {
+    int i;
+    float x;
+    x = -a[h][h] / a[r][h];
+    for (i = h; i < n; i++) a[r][i] = a[h][i] + x * a[r][i];
+}
+
+function dinhthuc() {
+    int i, j;
+    float d = 1;
+    for (i = 0; i < n - 1; i++) {
+        if (a[i][i] == 0) {
+            for (j = i + 1;
+                (j < n) && (a[i][j] == 0); j++);
+            if (j < n) {
+                doicot(i, j);
+                d = -d;
+            } else d = 0;
+        }
+
+        if (d == 0) break;
+        for (j = i + 1; j < n; j++)
+            if (a[j][i]) truhang(i, j);
+    }
+
+    if (d)
+        for (i = 0; i < n; i++) d = d * a[i][i];
+    return d;
 }
