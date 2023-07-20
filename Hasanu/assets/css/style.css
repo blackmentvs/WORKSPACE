@@ -1055,18 +1055,12 @@ body {
     animation-iteration-count: 99;
 }
 
-.btn--test {
-    position: relative;
-    animation-name: example;
-    animation-duration: 5s;
-    animation-iteration-count: 999;
-}
 
-.copyright p:hover {
+/* .copyright p:hover {
     animation-name: heartBeat;
     animation-duration: 1s;
     animation-iteration-count: 99;
-}
+} */
 
 
 /* ---------------- */
