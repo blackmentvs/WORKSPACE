@@ -1,5 +1,9 @@
 // 
+// 
+// 
 // ------------------------------booking----------------------
+// 
+// 
 // 
 const bookBtns = document.querySelectorAll('.js-booking')
 const modal = document.querySelector('.js-modal')
@@ -21,9 +25,13 @@ modalContainer.addEventListener('click', function(event) {
 function closeBuytickets() {
     modal.classList.remove('open')
 }
+//--------------------------------------------------------- 
+// 
 // 
 //----------------------------add Cart----------------------
 // 
+// 
+//---------------------------------------------------------- 
 const btnCart = document.querySelector('#cart-icon');
 const cart = document.querySelector('.cart');
 const btnClose = document.querySelector('#cart-close');
@@ -69,7 +77,7 @@ function loadContent() {
 
 //Xóa món
 function removeItem() {
-    if (confirm('Bạn có chắc ')) {
+    if (confirm('Bạn muốn xóa món này chứ. ')) {
         let title = this.parentElement.querySelector('.cart-food-title').innerHTML;
         itemList = itemList.filter(el => el.title != title);
         this.parentElement.remove();
@@ -92,7 +100,10 @@ function addCart() {
     let food = this.parentElement;
     let title = food.querySelector('.food-title').innerHTML;
     let price = food.querySelector('.food-price').innerHTML;
-    let imgSrc = food.querySelector('.food-img').src;
+    let imgSrc = food.querySelector('.food-img');
+    console.log('in', food.querySelector('.food-img'));
+
+
 
     let newProduct = { title, price, imgSrc }
 
@@ -127,7 +138,7 @@ function createCartProduct(title, price, imgSrc) {
    </div>
     <input type="number" value="1" class="cart-quantity">
   </div>
-  <ion-icon name="trash" class="cart-remove"></ion-icon>
+  <i class="fas fa-trash-o cart-remove"></i>
 </div>
   `;
 }

@@ -46,6 +46,10 @@ body {
     padding: 5px;
 }
 
+.header__social {
+    position: relative;
+}
+
 .header__social--icon {
     color: #e7a331;
     font-size: 1.8rem;
@@ -58,27 +62,31 @@ body {
 .header__cart-icon {
     font-size: 1.1rem;
     color: #e7a331;
-    margin-top: 6px;
+    /* margin-top: 6px; */
     cursor: pointer;
 }
 
 .cart-count {
     position: absolute;
-    background-color: #2f3542;
-    top: -5px;
-    right: 0;
+    /* background-color: #2f3542; */
+    color: #000;
+    top: -1px;
+    right: -5px;
     padding: 3px;
     height: 20px;
     width: 20px;
-    line-height: 20px;
+    line-height: 12px;
+    text-align: center;
     border-radius: 50%;
+    font-size: 18px;
+    font-weight: 500;
     z-index: 99;
 }
 
 #cart-icon {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     cursor: pointer;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 img {
@@ -106,6 +114,12 @@ img {
     padding: 10px;
     box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
     border-radius: 3px;
+}
+
+.food-img {
+    transition: 0.4s;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 
 .cart {
@@ -172,7 +186,8 @@ img {
 }
 
 .cart-remove {
-    font-size: 24px;
+    padding-top: 10px;
+    font-size: 20px;
     color: red;
     cursor: pointer;
 }
