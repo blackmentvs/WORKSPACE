@@ -58,14 +58,15 @@ function loadContent() {
         btn.addEventListener('click', removeItem);
     });
 
+
     //Product Item Change Event
     let qtyElements = document.querySelectorAll('.cart-quantity');
     qtyElements.forEach((input) => {
         input.addEventListener('change', changeQty);
     });
 
-    //Product Cart
 
+    //Product Cart
     let cartBtns = document.querySelectorAll('.add-cart');
     cartBtns.forEach((btn) => {
         btn.addEventListener('click', addCart);
@@ -77,7 +78,7 @@ function loadContent() {
 
 //Xóa món
 function removeItem() {
-    if (confirm('Bạn muốn xóa món này chứ. ')) {
+    if (confirm('Bạn muốn xóa món này chứ.')) {
         let title = this.parentElement.querySelector('.cart-food-title').innerHTML;
         itemList = itemList.filter(el => el.title != title);
         this.parentElement.remove();
@@ -98,14 +99,11 @@ let itemList = [];
 //Thêm vào giỏ hàng
 function addCart() {
     let food = this.parentElement;
+    let foodimg = this.parentElement.parentElement;
     let title = food.querySelector('.food-title').innerHTML;
     let price = food.querySelector('.food-price').innerHTML;
-    let imgSrc = food.querySelector('.food-img');
-    console.log('in', food.querySelector('.food-img'));
-
-
-
-    let newProduct = { title, price, imgSrc }
+    let imgSrc = foodimg.querySelector('.food-img').src;
+    let newProduct = { title, price, imgSrc };
 
     //Kiểm tra xem  món có trong giỏ chưa
     if (itemList.find((el) => el.title == newProduct.title)) {
@@ -151,8 +149,9 @@ function updateTotal() {
 
     cartItems.forEach(product => {
         let priceElement = product.querySelector('.cart-price');
-        let price = parseFloat(priceElement.innerHTML.replace("Rs.", ""));
+        let price = parseFloat(priceElement.innerHTML.replace("K", ""));
         let qty = product.querySelector('.cart-quantity').value;
+        console.log('qty', qty);
         total += (price * qty);
         product.querySelector('.cart-amt').innerText = (price * qty * 1000).toLocaleString() + 'đ';
 
@@ -175,96 +174,3 @@ function updateTotal() {
 
 
 }
-// ---------------------------------------------------------------
-// ---------------------------------------------------------------
-// ---------------------------------------------------------------
-$(document).ready(function() {
-
-
-    var textInput = $('#inputshop').val();
-
-    $(".b-popup").hide();
-
-
-    if (localStorage.getItem('shoplistlocal')) {
-        $('.list').html(localStorage.getItem('shoplistlocal'));
-    }
-
-
-    $("#market .items").on("click", function(e) {
-        $('.count').css({ "display": "block" });
-        var itemvalue = $(this).html();
-        $('.list').append('<li    class="item">' + $(this).html() + '</li>');
-        var shoplistlocal = $('.list').html();
-        localStorage.setItem('shoplistlocal', shoplistlocal);
-        return false;
-    });
-
-
-    $(".list").on("click", ".item", function() {
-        $(this).remove();
-        $('.count').css({ "display": "block" });
-        var itemlength = $(".app-body li").length;
-        $('.count').text(itemlength);
-        var shoplistlocal = $('.list').html();
-        localStorage.setItem('shoplistlocal', shoplistlocal);
-        return false;
-    });
-
-
-    $(".closepopup").click(function() {
-        $(".b-popup").hide(200);
-    });
-
-
-    $(".openpopup").click(function() {
-        if ($('.item').is('li')) {
-            $(".b-popup").fadeIn(200);
-        } else {
-            $(".tooltipshop2").animate({ marginLeft: "20px", easing: "easeout", opacity: "1" }, 300);
-            $(".tooltipshop2").delay(900).animate({ opacity: "0", marginLeft: "-90px" });
-        }
-    });
-    $("#send").click(function() {
-        var itemname = $("#inputname").val();
-        var itememail = $("#inputemail").val();
-        var itemtel = $("#inputtel").val();
-        var shopbox = $(".app-body").html();
-        $.ajax({
-            url: "sendmessege.php",
-            type: "post",
-            dataType: "json",
-            data: {
-                "itemname": user_name,
-                "itememail": user_email,
-                "itemtel": user_comment,
-                "shopbox": user_money
-            },
-            success: function() {
-                alert("Ваше сообщение отправлено!");
-
-            }
-        });
-    });
-
-    $('.closewindow').click(function() {
-        $('.app').fadeOut(500);
-    });
-    $('#tray').click(function() {
-        $('.app').fadeIn(500);
-    });
-
-
-    $('.items').click(function() {
-        var itemlength = $(".app-body li").length;
-        $('.count').text(itemlength);
-    });
-
-
-    $(".openpopup2").click(function() {
-        window.localStorage.clear();
-        $('.list').children().remove();
-        $('.count').hide();
-        return false;
-    });
-});
