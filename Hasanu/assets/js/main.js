@@ -75,7 +75,6 @@ function loadContent() {
     updateTotal();
 }
 
-
 //Xóa món
 function removeItem() {
     if (confirm('Bạn muốn xóa món này chứ.')) {

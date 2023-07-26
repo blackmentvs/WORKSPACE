@@ -12,6 +12,9 @@ body {
     scroll-behavior: smooth;
 }
 
+
+/*-------------------- header__navbar ------------------*/
+
 .header__navbar {
     position: fixed;
     right: 0;
@@ -57,12 +60,17 @@ body {
 }
 
 
-/* Cart */
+/* ----------------------Cart-------------------------- */
 
-.header__cart-icon {
+#cart-icon {
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.cart-icon {
     font-size: 1.1rem;
     color: #e7a331;
-    /* margin-top: 6px; */
     padding: 6px 12px;
     line-height: 32px;
     cursor: pointer;
@@ -70,7 +78,6 @@ body {
 
 .cart-count {
     position: absolute;
-    /* background-color: #2f3542; */
     color: #000;
     top: -1px;
     right: -5px;
@@ -83,39 +90,6 @@ body {
     font-size: 18px;
     font-weight: 500;
     z-index: 99;
-}
-
-#cart-icon {
-    font-size: 1.3rem;
-    cursor: pointer;
-    padding-top: 5px;
-}
-
-img {
-    width: 100%;
-}
-
-.container {
-    max-width: 1200px;
-    padding: 4rem;
-    margin: auto;
-    width: 100%;
-}
-
-.shop-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-    gap: 1.5rem;
-    justify-content: center;
-    align-content: center;
-}
-
-.food-box {
-    position: relative;
-    background-color: #fff;
-    padding: 10px;
-    box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
-    border-radius: 3px;
 }
 
 .food-img {
@@ -232,7 +206,30 @@ img {
 }
 
 
-/* end Cart */
+/*-------------------- order ------------------*/
+
+.buyinfo {
+    position: fixed;
+    top: 10%;
+    /* right: -100%; */
+    /* right: 405px; */
+    width: 400px;
+    /* height: 100vh; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+    z-index: 100;
+}
+
+.buyinfo-active {
+    right: 0;
+    transition: 0.5s;
+}
+
+
+/*-------------------- header menu ------------------*/
 
 .header__menu__bg {
     background: rgba(0, 0, 0, .45);
@@ -246,7 +243,7 @@ img {
 }
 
 
-/* .navbar {} */
+/*-------------------- menubar ------------------*/
 
 .bar--icon {
     display: flex;
@@ -265,6 +262,9 @@ img {
 .bar--icon__item:hover {
     color: #E7A331;
 }
+
+
+/*-------------------- headerlogo ------------------*/
 
 .header__logo {
     float: left;
@@ -309,6 +309,9 @@ img {
     margin-top: 8px;
 }
 
+
+/*-------------------- slider ------------------ */
+
 .slider {
     width: 100%;
     background: url(../images/bannerbg.jpg) center center no-repeat;
@@ -335,6 +338,9 @@ img {
     margin: 0px 0px 60px 0px;
 }
 
+
+/*-------------------- abouts ------------------ */
+
 .abouts {
     background: url(../images/abtbg.jpg) no-repeat center top scroll;
     background-size: cover;
@@ -349,6 +355,9 @@ img {
     line-height: 1.5rem;
     font-size: 1.4rem;
 }
+
+
+/*-------------------- features ------------------ */
 
 .features {
     background: url(../images/ftbg.jpg) center center no-repeat;
@@ -374,7 +383,7 @@ img {
 }
 
 
-/* munu css */
+/*-------------------- menu css ------------------ */
 
 .menu {
     background: url(../images/portfoliobg.jpg) center top no-repeat;
@@ -438,6 +447,9 @@ img {
 }
 
 
+/*-------------------- combo css ------------------ */
+
+
 /* combo css */
 
 .combo {
@@ -475,6 +487,9 @@ img {
     overflow: hidden;
     margin-top: 60px;
 }
+
+
+/*-------------------- mobaileapps ------------------ */
 
 .mobaileapps {
     background: url(../images/appsbg.jpg) top center no-repeat scroll;
@@ -518,6 +533,9 @@ img {
     margin-left: 10px;
     display: inline-block;
 }
+
+
+/*-------------------- footer__content ------------------ */
 
 .footer__content {
     color: #fff;
@@ -598,116 +616,7 @@ img {
 }
 
 
-/* modalbooking */
-
-.modal__booking.open {
-    display: flex;
-}
-
-.modal__booking {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    align-items: center;
-    justify-content: center;
-    display: none;
-}
-
-.modal-container {
-    width: 900px;
-    max-width: calc(100% - 100px);
-    min-height: 200px;
-    background: #fff;
-    position: relative;
-    animation: modalFadein ease 0.5s;
-}
-
-.modal-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px 16px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.modal-close:hover {
-    color: #000;
-    background-color: #ccc;
-    opacity: 1;
-}
-
-.modal-header {
-    background-color: #e7a331;
-    color: #fff;
-    height: 130px;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 4px;
-}
-
-.modal-body {
-    padding: 16px;
-}
-
-.modal-label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.modal-input {
-    display: block;
-    padding: 8px;
-    border: 1px solid #ccc;
-    width: 100%;
-    margin-bottom: 24px;
-}
-
-#bookingbtn {
-    border: none;
-    color: #fff;
-    background-color: #e7a331;
-    width: 100%;
-    padding: 16px;
-    margin: 16px 0;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
-#bookingbtn:hover {
-    color: #000;
-    background-color: #ccc;
-    opacity: 1;
-}
-
-.modal-footer {
-    padding: 16px;
-    text-align: right;
-}
-
-.modal-footer a {
-    color: #2196F3;
-}
-
-@keyframes modalFadein {
-    from {
-        opacity: 0;
-        transform: translateY(-150px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
-
-
-/* bookingform NEW */
+/* bookingform */
 
 .section-center {
     display: flex;
@@ -901,7 +810,13 @@ img {
 }
 
 
-/* Endbookingform */
+/* ---------------------------Endbookingform----------------------------- */
+
+
+/* orderform */
+
+
+/* orderform */
 
 .submit--btn {
     color: #fff;
@@ -1027,20 +942,13 @@ img {
 }
 
 
-/* .copyright p:hover {
-    animation-name: heartBeat;
-    animation-duration: 1s;
-    animation-iteration-count: 99;
-} */
-
-
 /* ---------------- */
 
 
 /* ---------------- */
 
 
-/* addcart test */
+/* add cart test */
 
 
 /*------------------*/
