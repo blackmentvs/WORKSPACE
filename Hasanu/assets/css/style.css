@@ -176,6 +176,7 @@ body {
     display: flex;
     justify-content: flex-end;
     margin-top: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .total-title {
@@ -208,24 +209,12 @@ body {
 
 /*-------------------- order ------------------*/
 
-.buyinfo {
-    position: fixed;
-    top: 10%;
-    /* right: -100%; */
-    /* right: 405px; */
-    width: 400px;
-    /* height: 100vh; */
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
-    z-index: 100;
-}
-
-.buyinfo-active {
-    right: 0;
-    transition: 0.5s;
+.form__order--title {
+    font-family: 'roboto', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 
@@ -449,9 +438,6 @@ body {
 
 /*-------------------- combo css ------------------ */
 
-
-/* combo css */
-
 .combo {
     background: url(../images/newsbg.jpg) no-repeat center top scroll;
     -moz-background-size: cover;
@@ -599,13 +585,6 @@ body {
 }
 
 .form__feedback {
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    font-size: 16px;
-    display: block;
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    border-radius: 4px;
     max-width: 90%;
     background: #323232;
     color: #cfc8c8;

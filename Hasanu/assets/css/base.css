@@ -146,17 +146,30 @@ input[type="color"],
     outline: none;
 }
 
-.form__feedback {
+
+/* form */
+
+.form {
+    display: block;
     border: 1px solid rgba(0, 0, 0, 0.08);
     font-size: 16px;
     height: 34px;
-    max-width: 90%;
-    background: #323232;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: #000;
+    width: 100%;
 }
 
-.form__feedback:focus {
+.form:focus {
     border-color: #d6962c;
 }
+
+.form--textarea {
+    height: auto;
+}
+
+
+/* end form */
 
 h1,
 h2,

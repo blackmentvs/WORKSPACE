@@ -28,7 +28,7 @@ function closeBuytickets() {
 //--------------------------------------------------------- 
 // 
 // 
-//----------------------------add Cart----------------------
+//-------------------------add Cart------------------------
 // 
 // 
 //---------------------------------------------------------- 
@@ -150,17 +150,13 @@ function updateTotal() {
         let priceElement = product.querySelector('.cart-price');
         let price = parseFloat(priceElement.innerHTML.replace("K", ""));
         let qty = product.querySelector('.cart-quantity').value;
-        console.log('qty', qty);
         total += (price * qty);
         product.querySelector('.cart-amt').innerText = (price * qty * 1000).toLocaleString() + 'đ';
-
     });
 
     totalValue.innerHTML = (total * 1000).toLocaleString() + 'đ';
 
-
     // Hiển thị số lượng món hiện có trên icon giỏ hàng
-
     const cartCount = document.querySelector('.cart-count');
     let count = itemList.length;
     cartCount.innerHTML = count;
@@ -170,6 +166,15 @@ function updateTotal() {
     } else {
         cartCount.style.display = 'block';
     }
-
-
 }
+// order food
+const btnOrder = document.querySelector('.js-buy');
+const incart = document.querySelector('.cart');
+const orderItems = document.querySelectorAll('.cart-box');
+
+btnOrder.addEventListener('click', () => {
+    console.log('btn order', incart);
+    console.log('orderItems', orderItems);
+
+
+});
