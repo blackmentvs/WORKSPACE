@@ -35,9 +35,9 @@
                         </div>
                         <div class="header__social text-right col l-2">
                             <div class="cart-count">0</div>
-                            <i name="cart" id="cart-icon" class="cart-icon fas fa-shopping-cart "></i>
+                            <i name="cart" id="cart-icon" class="cart-icon fas fa-shopping-cart"></i>
                         </div>
-                        <!-- gio hang -->
+                        <!-- giỏ hàng -->
                         <div class="cart">
                             <div class="cart-title">Giỏ Hàng</div>
                             <div class="cart-content">
@@ -80,7 +80,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="header__menu__bg">
                 <div class="menu__bg__content">
                     <div class="grid wide">
@@ -99,8 +98,6 @@
                             <li><a class="menu__bg--item" href="#mobaileapps">Tải App</a></li>
                             <li>
                                 <button class="btnbooking js-booking">Booking</button>
-
-                                <!-- <a href="#" class="menu__bg--booking js-booking">Đặt Bàn</a> -->
                             </li>
                         </ul>
                     </div>
@@ -152,7 +149,7 @@
     <section id="features" class="features">
         <div class="overlay">
             <div class="grid wide">
-                <div class="row features__container ">
+                <div class="row features__container">
                     <div class="col c-12">
                         <div class="features__content text-left animate__animated animate__fadeIn" style="animation-duration: 3s;">
                             <div class="col c-6">
@@ -179,7 +176,7 @@
     <!--Begin menu -->
     <section id="menu" class="menu">
         <div class="grid wide">
-            <div class="row menu__container ">
+            <div class="row menu__container">
                 <div class="col c-12">
                     <div class="content__title text-center">
                         <h4>MENU</h4>
@@ -282,7 +279,7 @@
                         </div>
                         <!--món11-->
                         <div class="col c-3 single__menu__text">
-                            <img src="/assets/images/mon10.jpg  " class="food-img">
+                            <img src="/assets/images/mon10.jpg" class="food-img">
                             <div class="menu__images__overlay text-center">
                                 <h6 class="food-title">Mì xào hải sản</h6>
                                 <p class="food-price">30K</p>
@@ -309,11 +306,11 @@
         <div class="grid wide">
             <div class="row combo__container">
                 <div class="col c-12">
-                    <div class="content__title text-center ">
+                    <div class="content__title text-center">
                         <h4>COMBO</h4>
                         <h3>Experience</h3>
                     </div>
-                    <div class="row combo__one text-left animate__animated  animate__bounceInRight">
+                    <div class="row combo__one text-left animate__animated animate__bounceInRight">
                         <div class="col c-6"></div>
                         <div class="col c-6">
                             <div class="features__text text-left">
@@ -325,7 +322,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row combo__two text-left animate__animated  animate__bounceInLeft">
+                    <div class="row combo__two text-left animate__animated animate__bounceInLeft">
                         <div class="col c-6">
                             <div class="features__text text-left">
                                 <h4>Combo2</h4>
@@ -428,11 +425,40 @@
                                 </div>
 
                                 <div class="form__widget">
-                                    <input type="email" class="form form__feedback" name="email" placeholder="Nhà hàng có thể liên hệ bạn qua" required="">
+                                    <input type="email" class="form form__feedback" name="email" placeholder="Email" required="">
                                 </div>
-
                                 <div class="form__widget">
-                                    <input type="text" class="form form__feedback" placeholder="Trải nghiệm của bạn">
+                                    <div id="rating">
+                                        <input type="radio" id="star5" name="rating" value="5" />
+                                        <label class="full" for="star5" title="Awesome - 5 stars"></label>
+
+                                        <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                                        <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+
+                                        <input type="radio" id="star4" name="rating" value="4" />
+                                        <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+
+                                        <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                                        <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+
+                                        <input type="radio" id="star3" name="rating" value="3" />
+                                        <label class="full" for="star3" title="Meh - 3 stars"></label>
+
+                                        <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                                        <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+
+                                        <input type="radio" id="star2" name="rating" value="2" />
+                                        <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+
+                                        <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                                        <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+
+                                        <input type="radio" id="star1" name="rating" value="1" />
+                                        <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+
+                                        <input type="radio" id="starhalf" name="rating" value="half" />
+                                        <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                    </div>
                                 </div>
                                 <!-- end of form-group -->
 
@@ -464,12 +490,12 @@
         <a href="#"><i class="fa fa-chevron-up"></i></a>
     </div>
     <!--  -->
-    <!-- booking -->
+    <!-- booking modal -->
     <div id="booking" class="booking js-modal">
-        <div class="section-center ">
+        <div class="section-center">
             <div class="booking-form js-modal-container">
                 <span class="js-modal-close"></span>
-                <div class="form-header ">
+                <div class="form-header">
                     <h1>Đặt bàn trước</h1>
                 </div>
                 <form>
@@ -481,13 +507,13 @@
                     <div class="row">
                         <div class="col c-6">
                             <div class="form-group">
-                                <input class="form-control" type="datetime-local" required>
+                                <input class="form-control" type="datetime-local" value="2023-07-28T08:30" required>
                                 <span class="form-label">Thời gian đặt tiệc</span>
                             </div>
                         </div>
                         <div class="col c-6">
                             <div class="form-group">
-                                <input class="form-control" type="datetime-local" required>
+                                <input class="form-control" type="datetime-local" value="2023-07-28T23:00" required>
                                 <span class="form-label">kết thúc tiệc</span>
                             </div>
                         </div>

@@ -156,7 +156,7 @@ function updateTotal() {
 
     totalValue.innerHTML = (total * 1000).toLocaleString() + 'đ';
 
-    // Hiển thị số lượng món hiện có trên icon giỏ hàng
+    // hiển thị số lượng món hiện có trên icon giỏ hàng
     const cartCount = document.querySelector('.cart-count');
     let count = itemList.length;
     cartCount.innerHTML = count;
@@ -175,6 +175,4 @@ const orderItems = document.querySelectorAll('.cart-box');
 btnOrder.addEventListener('click', () => {
     console.log('btn order', incart);
     console.log('orderItems', orderItems);
-
-
 });
