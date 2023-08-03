@@ -167,6 +167,50 @@ function updateTotal() {
         cartCount.style.display = 'block';
     }
 }
+//submitbtnjs
+loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let username = document.getElementById("username");
+    let password = document.getElementById("password");
+
+    if (username.value == "" || password.value == "") {
+
+    } else {}
+});
+// -------------------
+$('.minus-btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var value = parseInt($input.val());
+
+    if (value & amp; amp; gt; 1) {
+        value = value - 1;
+    } else {
+        value = 0;
+    }
+
+    $input.val(value);
+
+});
+
+$('.plus-btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var value = parseInt($input.val());
+
+    if (value & amp; amp; lt; 100) {
+        value = value + 1;
+    } else {
+        value = 100;
+    }
+
+    $input.val(value);
+});
+//----------------
+
 // order food
 const btnOrder = document.querySelector('.js-buy');
 const incart = document.querySelector('.cart');
@@ -176,3 +220,4 @@ btnOrder.addEventListener('click', () => {
     console.log('btn order', incart);
     console.log('orderItems', orderItems);
 });
+//
