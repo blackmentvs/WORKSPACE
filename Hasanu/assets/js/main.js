@@ -168,47 +168,47 @@ function updateTotal() {
     }
 }
 //submitbtnjs
-loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+// loginForm.addEventListener("submit", (e) => {
+//     e.preventDefault();
 
-    let username = document.getElementById("username");
-    let password = document.getElementById("password");
+//     let username = document.getElementById("username");
+//     let password = document.getElementById("password");
 
-    if (username.value == "" || password.value == "") {
+//     if (username.value == "" || password.value == "") {
 
-    } else {}
-});
+//     } else {}
+// });
 // -------------------
-$('.minus-btn').on('click', function(e) {
-    e.preventDefault();
-    var $this = $(this);
-    var $input = $this.closest('div').find('input');
-    var value = parseInt($input.val());
+// $('.minus-btn').on('click', function(e) {
+//     e.preventDefault();
+//     var $this = $(this);
+//     var $input = $this.closest('div').find('input');
+//     var value = parseInt($input.val());
 
-    if (value & amp; amp; gt; 1) {
-        value = value - 1;
-    } else {
-        value = 0;
-    }
+//     if (value & amp; amp; gt; 1) {
+//         value = value - 1;
+//     } else {
+//         value = 0;
+//     }
 
-    $input.val(value);
+//     $input.val(value);
 
-});
+// });
 
-$('.plus-btn').on('click', function(e) {
-    e.preventDefault();
-    var $this = $(this);
-    var $input = $this.closest('div').find('input');
-    var value = parseInt($input.val());
+// $('.plus-btn').on('click', function(e) {
+//     e.preventDefault();
+//     var $this = $(this);
+//     var $input = $this.closest('div').find('input');
+//     var value = parseInt($input.val());
 
-    if (value & amp; amp; lt; 100) {
-        value = value + 1;
-    } else {
-        value = 100;
-    }
+//     if (value & amp; amp; lt; 100) {
+//         value = value + 1;
+//     } else {
+//         value = 100;
+//     }
 
-    $input.val(value);
-});
+//     $input.val(value);
+// });
 //----------------
 
 // order food
@@ -221,3 +221,25 @@ btnOrder.addEventListener('click', () => {
     console.log('orderItems', orderItems);
 });
 //
+// -----------feedback----------------
+var feedbackForm = function(e) {
+    var form = (e.target) ? e.target : e.srcElement;
+    if (form.name.value == "") {
+        alert("Bạn chưa nhập tên");
+        form.name.focus();
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+        return;
+    }
+    if (form.email.value == "") {
+        alert("Vui lòng nhập email");
+        form.email.focus();
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+        return;
+    }
+    if (form.message.value == "") {
+        alert("Hãy để lại lời nhắn cho chúng tôi.");
+        form.message.focus();
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+        return;
+    }
+};
