@@ -243,3 +243,61 @@ var feedbackForm = function(e) {
         return;
     }
 };
+// random image page feedback
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+var randomOrder = function(element) {
+
+    var vpHeight = window.innerHeight;
+    var vpWidth = window.innerWidth;
+
+    var xPos = getRandomInt(0, vpWidth - element.offsetWidth);
+    var yPos = getRandomInt(0, vpHeight - element.offsetHeight);
+    var zIndex = getRandomInt(0, 13);
+
+    element.style.cssText += '--x-position:' + xPos + 'px; --y-position:' + yPos + 'px; z-index:' + zIndex;
+};
+
+var imgs = document.querySelectorAll('.img__feedback');
+
+imgs.forEach((the_img) => {
+
+    window.addEventListener('load', function() {
+        randomOrder(the_img);
+    });
+
+});
+// image position
+var circlePosition = document.getElementsByClassName('circle');
+console.log(circlePosition);
+
+function position() {
+    for (var i = 0; i < circlePosition.length; i++) {
+        var posx = (Math.random() * ($(document).width() - 0)).toFixed();
+        var posy = (Math.random() * ($(document).height() - 0)).toFixed();
+
+
+        $(circlePosition[i]).css({
+            'position': 'absolute',
+            'left': posx + 'px',
+            'top': posy + 'px',
+        })
+    }
+}
+var circleTotal = circlePosition.length;
+
+$('.circle').click(function() {
+    $(this).fadeOut();
+    circleTotal = circleTotal - 1;
+    console.log(circleTotal);
+
+    if (circleTotal == 0) {
+        position()
+        $('.circle').fadeIn();
+    }
+
+});
+
+position();
