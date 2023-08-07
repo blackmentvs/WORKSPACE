@@ -167,54 +167,10 @@ function updateTotal() {
         cartCount.style.display = 'block';
     }
 }
-//submitbtnjs
-// loginForm.addEventListener("submit", (e) => {
-//     e.preventDefault();
-
-//     let username = document.getElementById("username");
-//     let password = document.getElementById("password");
-
-//     if (username.value == "" || password.value == "") {
-
-//     } else {}
-// });
-// -------------------
-// $('.minus-btn').on('click', function(e) {
-//     e.preventDefault();
-//     var $this = $(this);
-//     var $input = $this.closest('div').find('input');
-//     var value = parseInt($input.val());
-
-//     if (value & amp; amp; gt; 1) {
-//         value = value - 1;
-//     } else {
-//         value = 0;
-//     }
-
-//     $input.val(value);
-
-// });
-
-// $('.plus-btn').on('click', function(e) {
-//     e.preventDefault();
-//     var $this = $(this);
-//     var $input = $this.closest('div').find('input');
-//     var value = parseInt($input.val());
-
-//     if (value & amp; amp; lt; 100) {
-//         value = value + 1;
-//     } else {
-//         value = 100;
-//     }
-
-//     $input.val(value);
-// });
-//----------------
-
 // order food
 const btnOrder = document.querySelector('.js-buy');
 const incart = document.querySelector('.cart');
-const orderItems = document.querySelectorAll('.cart-box');
+const orderItems = document.querySelectorAll('.cart-content');
 
 btnOrder.addEventListener('click', () => {
     console.log('btn order', incart);
@@ -222,82 +178,42 @@ btnOrder.addEventListener('click', () => {
 });
 //
 // -----------feedback----------------
-var feedbackForm = function(e) {
-    var form = (e.target) ? e.target : e.srcElement;
-    if (form.name.value == "") {
-        alert("Bạn chưa nhập tên");
-        form.name.focus();
-        e.preventDefault ? e.preventDefault() : e.returnValue = false;
-        return;
+
+submitForm() {
+    const message = document.getElementById('feedback-message').value
+    const email = this.options.emailField ? document.getElementById('feedback-email').value : undefined
+
+    const data = {
+        id: this.options.id,
+        email: email,
+        feedbackType: this.current,
+        url: window.location.href,
+        message: message
     }
-    if (form.email.value == "") {
-        alert("Vui lòng nhập email");
-        form.email.focus();
-        e.preventDefault ? e.preventDefault() : e.returnValue = false;
-        return;
+
+    if (this.options.events) {
+        const event = new CustomEvent('feedback-submit', { detail: data })
+        window.dispatchEvent(event)
+        this.renderSuccess()
+        return
     }
-    if (form.message.value == "") {
-        alert("Hãy để lại lời nhắn cho chúng tôi.");
-        form.message.focus();
-        e.preventDefault ? e.preventDefault() : e.returnValue = false;
-        return;
-    }
-};
-// random image page feedback
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+
+    this.sendToEndpoint(data)
 }
+sendToEndpoint(data) {
+    this.renderLoading()
 
-var randomOrder = function(element) {
+    const request = new XMLHttpRequest()
+    request.open('POST', this.options.endpoint)
+    request.setRequestHeader('Content-type', 'application/json')
+    request.send(JSON.stringify(data))
+    request.onreadystatechange = () => {
+        if (request.readyState === 4) {
+            if (request.status === 200) {
+                return this.renderSuccess()
+            }
 
-    var vpHeight = window.innerHeight;
-    var vpWidth = window.innerWidth;
-
-    var xPos = getRandomInt(0, vpWidth - element.offsetWidth);
-    var yPos = getRandomInt(0, vpHeight - element.offsetHeight);
-    var zIndex = getRandomInt(0, 13);
-
-    element.style.cssText += '--x-position:' + xPos + 'px; --y-position:' + yPos + 'px; z-index:' + zIndex;
-};
-
-var imgs = document.querySelectorAll('.img__feedback');
-
-imgs.forEach((the_img) => {
-
-    window.addEventListener('load', function() {
-        randomOrder(the_img);
-    });
-
-});
-// image position
-var circlePosition = document.getElementsByClassName('circle');
-console.log(circlePosition);
-
-function position() {
-    for (var i = 0; i < circlePosition.length; i++) {
-        var posx = (Math.random() * ($(document).width() - 0)).toFixed();
-        var posy = (Math.random() * ($(document).height() - 0)).toFixed();
-
-
-        $(circlePosition[i]).css({
-            'position': 'absolute',
-            'left': posx + 'px',
-            'top': posy + 'px',
-        })
+            this.renderFailed()
+        }
     }
 }
-var circleTotal = circlePosition.length;
-
-$('.circle').click(function() {
-    $(this).fadeOut();
-    circleTotal = circleTotal - 1;
-    console.log(circleTotal);
-
-    if (circleTotal == 0) {
-        position()
-        $('.circle').fadeIn();
-    }
-
-});
-
-position();
