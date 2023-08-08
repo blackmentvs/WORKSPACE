@@ -11,12 +11,38 @@
 </head>
 
 <body>
-    <p>
-        <center>
-            <h1>Test Web 1.0</h1>
-            <a href="Login.html"><button class="loginbtn">Đăng Nhập</button></a>
-            <a href="Signup.html"><button class="signupbtn">Đăng Ký</button></a>
-        </center>
+    <div class="container">
+        <div>
+            <label for="">Name</label>
+            <input type="text" name="fname" id="fname" onkeyup=handleInput(this)>
+        </div>
+        <div>
+            <label for="">Age</label>
+            <input type="number" name="age" id="age" onkeyup=handleInput(this)>
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input type="text" name="email" id="email" onkeyup=handleInput(this)>
+        </div>
+        <div>
+            <label for="">Mobile</label>
+            <input type="number" name="mobile" id="number" onkeyup=handleInput(this)>
+        </div>
+        <div>
+            <button onclick=submitData()>Submit</button>
+        </div>
+    </div>
+    <script>
+        const data = {};
 
-    </p>
+        function handleInput(e) {
+            data[e.name] = e.value;
+        }
+
+        function submitData() {
+            console.log(data.fname); // Get the first name from the object
+            console.log(data); // return object
+        }
+    </script>
+    <script src="./main.js"></script>
 </body>

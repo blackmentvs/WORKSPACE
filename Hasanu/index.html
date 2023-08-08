@@ -53,22 +53,24 @@
                                     </h4>
                                 </div>
                                 <div class="form__widget">
-                                    <input type="text" class="form form__order" name="name" placeholder="Tên của bạn" required="">
+                                    <input type="text" class="form form__order" name="name" placeholder="Tên của bạn" required="" onkeyup=Inputorder(this)>
                                 </div>
                                 <div class="form__widget">
-                                    <input type="number" class="form form__order" name="phone" placeholder="Số điện thoại đặt hàng" required="">
+                                    <input type="number" class="form form__order" name="phone" placeholder="Số điện thoại đặt hàng" required="" onkeyup=Inputorder(this)>
                                 </div>
                                 <div class="form__widget">
-                                    <input type="email" class="form form__order" name="email" placeholder="Nhập email" required="">
+                                    <input type="email" class="form form__order" name="email" placeholder="Nhập email" required="" onkeyup=Inputorder(this)>
                                 </div>
                                 <div class="form__widget">
-                                    <input type="text" class="form form__order" placeholder="địa chỉ nhận hàng">
+                                    <input type="text" class="form form__order" placeholder="địa chỉ nhận hàng" onkeyup=Inputorder(this)>
                                 </div>
                                 <div class="form__widget">
-                                    <textarea class="form--textarea form form__order" name="message" rows="3" placeholder="Ghi chú"></textarea>
+                                    <textarea class="form--textarea form form__order" name="message" rows="3" placeholder="Ghi chú" onkeyup=Inputorder(this)></textarea>
+                                </div>
+                                <div>
+                                    <button class="btn-buy js-buy" onclick=submitData()>Đặt hàng</button>
                                 </div>
                             </form>
-                            <button class="btn-buy js-buy">Đặt hàng</button>
                             <i id="cart-close" class="fa fa-times"></i>
                         </div>
                         <div class="header__social text-right col l-2">
@@ -419,7 +421,7 @@
                     <div class="colum__widget">
                         <h3 class="footer__address">Cho chúng tôi biết về trải nghiệm của bạn</h3>
                         <div class="colum__widget__form text-left">
-                            <form action="#" id="formid">
+                            <form id="formid">
                                 <div class="form__widget">
                                     <input id="feedback-name" type="text" class="form form__feedback" name="name" placeholder="Tên của bạn" required="">
                                 </div>
@@ -460,12 +462,12 @@
                                         <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                     </div>
                                 </div>
-                                <!-- end of form-group -->
 
                                 <div class="form__widget">
                                     <textarea id="feedback-message" class="form--textarea form form__feedback" name="message" rows="3" placeholder="Lời nhắn"></textarea>
                                 </div>
-                                <button id="feedback-submit" class="submit--btn fb--btn">Gửi</button>
+                                <button class="" onclick="submitFormfeedback()">Gửi</button>
+                                <!-- <input type="button" class="submit--btn fb--btn" value=" nhấn vào"></input> -->
                             </form>
                         </div>
                     </div>

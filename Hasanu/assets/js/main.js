@@ -167,54 +167,48 @@ function updateTotal() {
         cartCount.style.display = 'block';
     }
 }
-// order food
-const btnOrder = document.querySelector('.js-buy');
-const incart = document.querySelector('.cart');
-const orderItems = document.querySelectorAll('.cart-content');
+//  -----------order food -----------
+// const btnOrder = document.querySelector('.js-buy');
 
-btnOrder.addEventListener('click', () => {
-    console.log('btn order', incart);
-    console.log('orderItems', orderItems);
-});
-//
+const data = {};
+
+function Inputorder(e) {
+    data[e.name] = e.value;
+}
+
+function submitData() {
+    console.log(data.fname);
+    console.log(data);
+}
+
+
 // -----------feedback----------------
 
+const btnFeedback = document.querySelector('.submit--btn');
+btnFeedback.addEventListener('click', () => {
+    var formData = new FormData(document.querySelector('form'));
+    console.log("formData: ", formData);
 
-submitForm() {
-    const message = document.getElementById('feedback-message').value
-    const email = this.options.emailField ? document.getElementById('feedback-email').value : undefined
+    function submitFormfeedback() {
+        const name = document.getElementById('feedback-name').value;
+        const message = document.getElementById('feedback-message').value;
+        const rating = document.getElementById('rating').value;
+        const email = this.options.emailField ? document.getElementById('feedback-email').value : undefined;
 
-    const data = {
-        id: this.options.id,
-        email: email,
-        feedbackType: this.current,
-        url: window.location.href,
-        message: message
-    }
-
-    if (this.options.events) {
-        const event = new CustomEvent('feedback-submit', { detail: data })
-        window.dispatchEvent(event)
-        this.renderSuccess()
-        return
-    }
-
-    this.sendToEndpoint(data)
-}
-sendToEndpoint(data) {
-    this.renderLoading()
-
-    const request = new XMLHttpRequest()
-    request.open('POST', this.options.endpoint)
-    request.setRequestHeader('Content-type', 'application/json')
-    request.send(JSON.stringify(data))
-    request.onreadystatechange = () => {
-        if (request.readyState === 4) {
-            if (request.status === 200) {
-                return this.renderSuccess()
-            }
-
-            this.renderFailed()
+        const data = {
+            id: this.options.id,
+            name: name,
+            email: email,
+            rating: rating,
+            feedbackType: this.current,
+            url: window.location.href,
+            message: message
         }
+        console.log("data: ", data);
+        if (this.options.events) {
+            const event = new CustomEvent('feedback-submit', { detail: data })
+            console.log("data: ", data);
+            return
+        };
     }
-}
+});
