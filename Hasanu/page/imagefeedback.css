@@ -1,0 +1,19 @@
+.grid-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.img__feedback {
+    position: absolute;
+    max-width: 300px;
+    height: auto;
+    transition: all 0.3s ease;
+    transform: translate(var(--x-position), var(--y-position)) scale(0.75);
+}
+
+.img__feedback:hover {
+    max-width: 100%;
+    transform: translate(var(--x-position), var(--y-position)) scale(1.25);
+    z-index: 999 !important;
+}
