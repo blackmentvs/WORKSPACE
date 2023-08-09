@@ -167,22 +167,42 @@ function updateTotal() {
         cartCount.style.display = 'block';
     }
 }
-//  -----------order food -----------
-// const btnOrder = document.querySelector('.js-buy');
+//  --------------------order food ------------------
+const btnOrder = document.querySelector('.js-buy');
 
-const data = {};
+const odname = document.getElementById('ordername').value;
+const odphone = document.getElementById('orderphone').value;
+const odemail = document.getElementById('orderemail').value;
+const odaddress = document.getElementById('orderaddress').value;
+const odmessage = document.getElementById('ordermess').value;
 
-function Inputorder(e) {
-    data[e.name] = e.value;
+function submitBuy() {
+    const data = {
+        name: odname,
+        phone: odphone,
+        email: odemail,
+        address: odaddress,
+        message: odmessage
+    }
 }
 
-function submitData() {
-    console.log(data.fname);
+
+// ----------------------feedback---------------------
+function submitfeedback() {
+    const name = document.getElementById('feedback-name').value;
+    const email = document.getElementById('feedback-email').value;
+    const rating = document.getElementById('rating').length;
+    const message = document.getElementById('feedback-message').value;
+    console.log(rating);
+
+    const data = {
+        name: name,
+        email: email,
+        rating: rating,
+        message: message
+    }
     console.log(data);
 }
-
-
-// -----------feedback----------------
 
 const btnFeedback = document.querySelector('.submit--btn');
 btnFeedback.addEventListener('click', () => {
@@ -196,19 +216,26 @@ btnFeedback.addEventListener('click', () => {
         const email = this.options.emailField ? document.getElementById('feedback-email').value : undefined;
 
         const data = {
-            id: this.options.id,
             name: name,
             email: email,
             rating: rating,
-            feedbackType: this.current,
-            url: window.location.href,
             message: message
         }
         console.log("data: ", data);
-        if (this.options.events) {
-            const event = new CustomEvent('feedback-submit', { detail: data })
-            console.log("data: ", data);
-            return
-        };
     }
 });
+// Menu option
+function menu(evt, menuName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("menu");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    gridlinks = document.getElementsByClassName("grid");
+    for (i = 0; i < x.length; i++) {
+        tablinksgridlinks[i].className = gridlinks[i].className.replace("menu__container", "");
+    }
+    document.getElementById(menuName).style.display = "block";
+    evt.currentTarget.firstElementChild.className += " wide";
+}
+document.getElementById("menu").click();

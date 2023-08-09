@@ -46,31 +46,29 @@
                                 <div class="total-title">Tổng</div>
                                 <div class="total-price">0k</div>
                             </div>
-                            <form action="#" id="form__order">
-                                <div class="form__widget">
-                                    <h4 class="form__order--title">
-                                        Thông tin đơn hàng
-                                    </h4>
-                                </div>
-                                <div class="form__widget">
-                                    <input type="text" class="form form__order" name="name" placeholder="Tên của bạn" required="" onkeyup=Inputorder(this)>
-                                </div>
-                                <div class="form__widget">
-                                    <input type="number" class="form form__order" name="phone" placeholder="Số điện thoại đặt hàng" required="" onkeyup=Inputorder(this)>
-                                </div>
-                                <div class="form__widget">
-                                    <input type="email" class="form form__order" name="email" placeholder="Nhập email" required="" onkeyup=Inputorder(this)>
-                                </div>
-                                <div class="form__widget">
-                                    <input type="text" class="form form__order" placeholder="địa chỉ nhận hàng" onkeyup=Inputorder(this)>
-                                </div>
-                                <div class="form__widget">
-                                    <textarea class="form--textarea form form__order" name="message" rows="3" placeholder="Ghi chú" onkeyup=Inputorder(this)></textarea>
-                                </div>
-                                <div>
-                                    <button class="btn-buy js-buy" onclick=submitData()>Đặt hàng</button>
-                                </div>
-                            </form>
+                            <div class="form__widget">
+                                <h4 class="form__order--title">
+                                    Thông tin đơn hàng
+                                </h4>
+                            </div>
+                            <div class="form__widget">
+                                <input type="text" id="ordername" class="form form__order" name="name" placeholder="Tên của bạn" required="" onkeyup=Inputorder(this)>
+                            </div>
+                            <div class="form__widget">
+                                <input type="number" id="orderphone" class="form form__order" name="phone" placeholder="Số điện thoại đặt hàng" required="" onkeyup=Inputorder(this)>
+                            </div>
+                            <div class="form__widget">
+                                <input type="email" id="orderemail" class="form form__order" name="email" placeholder="Nhập email" required="" onkeyup=Inputorder(this)>
+                            </div>
+                            <div class="form__widget">
+                                <input type="text" id="orderaddress" class="form form__order" placeholder="địa chỉ nhận hàng" onkeyup=Inputorder(this)>
+                            </div>
+                            <div class="form__widget">
+                                <textarea id="ordermess" class="form--textarea form form__order" name="message" rows="3" placeholder="Ghi chú" onkeyup=Inputorder(this)></textarea>
+                            </div>
+                            <div>
+                                <button class="btn-buy js-buy" onclick=submitBuy()>Đặt hàng</button>
+                            </div>
                             <i id="cart-close" class="fa fa-times"></i>
                         </div>
                         <div class="header__social text-right col l-2">
@@ -421,54 +419,50 @@
                     <div class="colum__widget">
                         <h3 class="footer__address">Cho chúng tôi biết về trải nghiệm của bạn</h3>
                         <div class="colum__widget__form text-left">
-                            <form id="formid">
-                                <div class="form__widget">
-                                    <input id="feedback-name" type="text" class="form form__feedback" name="name" placeholder="Tên của bạn" required="">
+                            <div class="form__widget">
+                                <input id="feedback-name" type="text" class="form form__feedback" name="name" placeholder="Tên của bạn" required="">
+                            </div>
+                            <div class="form__widget">
+                                <input id="feedback-email" type="email" class="form form__feedback" name="email" placeholder="Email" required="">
+                            </div>
+                            <div class="form__widget">
+                                <div id="rating">
+                                    <input type="radio" id="star5" name="rating" value="5" />
+                                    <label class="full" for="star5" title="Awesome - 5 stars"></label>
+
+                                    <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+
+                                    <input type="radio" id="star4" name="rating" value="4" />
+                                    <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+
+                                    <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                                    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+
+                                    <input type="radio" id="star3" name="rating" value="3" />
+                                    <label class="full" for="star3" title="Meh - 3 stars"></label>
+
+                                    <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                                    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+
+                                    <input type="radio" id="star2" name="rating" value="2" />
+                                    <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+
+                                    <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+
+                                    <input type="radio" id="star1" name="rating" value="1" />
+                                    <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+
+                                    <input type="radio" id="starhalf" name="rating" value="half" />
+                                    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                 </div>
+                            </div>
 
-                                <div class="form__widget">
-                                    <input id="feedback-email" type="email" class="form form__feedback" name="email" placeholder="Email" required="">
-                                </div>
-                                <div class="form__widget">
-                                    <div id="rating">
-                                        <input type="radio" id="star5" name="rating" value="5" />
-                                        <label class="full" for="star5" title="Awesome - 5 stars"></label>
-
-                                        <input type="radio" id="star4half" name="rating" value="4 and a half" />
-                                        <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-
-                                        <input type="radio" id="star4" name="rating" value="4" />
-                                        <label class="full" for="star4" title="Pretty good - 4 stars"></label>
-
-                                        <input type="radio" id="star3half" name="rating" value="3 and a half" />
-                                        <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-
-                                        <input type="radio" id="star3" name="rating" value="3" />
-                                        <label class="full" for="star3" title="Meh - 3 stars"></label>
-
-                                        <input type="radio" id="star2half" name="rating" value="2 and a half" />
-                                        <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-
-                                        <input type="radio" id="star2" name="rating" value="2" />
-                                        <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-
-                                        <input type="radio" id="star1half" name="rating" value="1 and a half" />
-                                        <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-
-                                        <input type="radio" id="star1" name="rating" value="1" />
-                                        <label class="full" for="star1" title="Sucks big time - 1 star"></label>
-
-                                        <input type="radio" id="starhalf" name="rating" value="half" />
-                                        <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                    </div>
-                                </div>
-
-                                <div class="form__widget">
-                                    <textarea id="feedback-message" class="form--textarea form form__feedback" name="message" rows="3" placeholder="Lời nhắn"></textarea>
-                                </div>
-                                <button class="" onclick="submitFormfeedback()">Gửi</button>
-                                <!-- <input type="button" class="submit--btn fb--btn" value=" nhấn vào"></input> -->
-                            </form>
+                            <div class="form__widget">
+                                <textarea id="feedback-message" class="form--textarea form form__feedback" name="message" rows="3" placeholder="Lời nhắn"></textarea>
+                            </div>
+                            <button class="submit--btn" onclick="submitfeedback()">Gửi</button>
                         </div>
                     </div>
                 </div>
