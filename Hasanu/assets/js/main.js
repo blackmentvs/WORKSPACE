@@ -239,3 +239,124 @@ function menu(evt, menuName) {
     evt.currentTarget.firstElementChild.className += " wide";
 }
 document.getElementById("menu").click();
+//  validator form
+function validator(options) {
+    var form = document.querySelector(mainForm.form)
+    var allRules = {}
+
+    function getParent(element) {
+        if (element.matches('.form-group')) {
+            return element
+        } else {
+            return getParent(element.parentElement)
+        }
+    }
+
+    function regex(element, inputselect) {
+        var message = ''
+        var parentelement = getParent(inputselect)
+        var messageError = parentelement.querySelector('.form-message')
+
+        for (let i = 0; i < element.length; ++i) {
+            message = element[i](inputselect.value)
+            if (message) {
+                break;
+            }
+        }
+
+        if (message) {
+            parentelement.classList.add('invalid');
+            messageError.innerText = message;
+            return false
+        } else {
+            parentelement.classList.remove('invalid');
+            messageError.innerText = '';
+            return true
+        }
+    }
+    rules.forEach(element => {
+
+        if (Array.isArray(allRules[element.input])) {
+            allRules[element.input].push(element.test)
+        } else {
+            allRules[element.input] = [element.test]
+        }
+
+        var inputselect = form.querySelector(element.input)
+
+        inputselect.onblur = function() {
+            regex(allRules[element.input], inputselect)
+        }
+
+        inputselect.oninput = function() {
+            var parentelement = getParent(inputselect)
+            var messageError = parentelement.querySelector('.feedback-message')
+            parentelement.classList.remove('invalid');
+            messageError.innerText = '';
+        }
+    });
+}
+
+// xử lý form(radio checkbox)
+if (isFormValid) {
+
+    if (typeof options.onSubmit === 'function') {
+        var enableInputs = formElement.querySelectorAll('[name]:not([disabled])')
+        var resultInput = Array.from(enableInputs).reduce(function(values, input) {
+            switch (input.type) {
+                case 'radio':
+                    if (input.checked) {
+                        values[input.name] = input.value
+                    }
+
+                    if (!values[input.name]) {
+                        values[input.name] = ''
+                    }
+                    break;
+                case 'checkbox':
+                    if (input.checked) {
+                        if (Array.isArray(values[input.name])) {
+                            values[input.name].push(input.value)
+                        } else {
+                            values[input.name] = [input.value]
+                        }
+                    }
+                    if (!values[input.name]) {
+                        values[input.name] = []
+                    }
+                    break;
+                default:
+                    values[input.name] = input.value
+            }
+            return values
+        }, {})
+        options.onSubmit(resultInput)
+    } else {
+        formElement.submit()
+    }
+}
+
+function blurInput(elementInput) {
+    var ruleInput = totalRule[elementInput.name]
+    var parentInput = getParent(elementInput)
+    var elementCart = parentInput.querySelector('.cart-content')
+    var message;
+
+    elementInput.onblur = function() {
+
+        for (let i = 0; i < ruleInput.length; ++i) {
+
+            message = ruleInput[i](this.value)
+
+            if (message) {
+                parentInput.classList.add('invalid')
+                elementCart.innerText = message
+                break;
+            } else {
+                parentInput.classList.remove('invalid')
+                elementCart.innerText = ''
+            }
+        }
+    }
+    onInput(elementInput, parentInput, elementMessage)
+}
