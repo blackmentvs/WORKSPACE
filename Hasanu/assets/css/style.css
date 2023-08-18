@@ -563,6 +563,23 @@ body {
     color: #e7a331;
 }
 
+.footer-item {
+    padding: 4px 0;
+}
+
+.footer-item__icon {
+    color: #fff;
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+.footer__heading {
+    color: #cfc8c8;
+}
+
+
+/* --------------------------------- */
+
 .colum__widget__content p {
     margin-top: 40px;
     font-weight: 400;

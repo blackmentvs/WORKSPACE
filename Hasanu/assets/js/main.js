@@ -296,6 +296,7 @@ function validator(options) {
         }
     });
 }
+``
 
 // xử lý form(radio checkbox)
 if (isFormValid) {
@@ -359,4 +360,29 @@ function blurInput(elementInput) {
         }
     }
     onInput(elementInput, parentInput, elementMessage)
+}
+
+// responsive header menubar
+
+var header = document.getElementById('header')
+var menubars = document.getElementById('menu-bars')
+menubars.onclick = function() {
+    var iClose = header.clientHeight === 47;
+    if (iClose) {
+        header.style.height = 'auto';
+    } else {
+        header.style.height = '47px';
+    }
+}
+menuItems = document.querySelectorAll('#nav li a[href*="#"]')
+for (var i = 0; i < menuItems.length; i++) {
+    var menuItem = menuItems[i];
+    menuItem.onclick = function(event) {
+        var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+        if (isParentMenu) {
+            event.preventDefault();
+        } else {
+            header.style.height = null;
+        }
+    }
 }

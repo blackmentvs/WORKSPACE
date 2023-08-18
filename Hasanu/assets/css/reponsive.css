@@ -18,11 +18,30 @@
 }
 
 
-/* Tablet */
+/* Tablet - Pc low  */
 
 @media (min-width: 740px) and (max-width: 1023px) {
     .hide-on-tablet {
         display: none;
+    }
+    /* .header__logo {
+        display: none;
+    } */
+    .menu__images__overlay {
+        width: 85%;
+        height: 85%;
+        padding: 0;
+    }
+    .single__menu__text:hover .menu__images__overlay {
+        top: 10px;
+    }
+    .menu__images__overlay h6 {
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+    .menu__images__overlay p.food-price {
+        font-size: 1.8rem;
+        line-height: 2rem;
     }
 }
 
@@ -45,7 +64,4 @@
     .header__social {
         display: none;
     }
-    /* .call__text {
-        justify-content: center;
-    } */
 }
