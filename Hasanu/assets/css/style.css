@@ -269,6 +269,10 @@ body {
     width: 22%;
 }
 
+.menu__bg--list.open {
+    display: block;
+}
+
 .menu__bg--list {
     display: flex;
     justify-content: right;

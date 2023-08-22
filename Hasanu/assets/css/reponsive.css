@@ -52,8 +52,23 @@
     .hide-on-mobile {
         display: none;
     }
+    .header__menu__bg {
+        background: rgba(0, 0, 0, .9);
+        /* height: 380px; */
+    }
     .menu__bg__content {
+        position: relative;
+    }
+    .menu__bg--list {
+        position: absolute;
         display: none;
+        left: 50%;
+        top: 0px;
+        transform: translateX(-50%);
+    }
+    .menu__bg--list li {
+        justify-content: center;
+        line-height: 20px;
     }
     .navbar__logo {
         display: none;
