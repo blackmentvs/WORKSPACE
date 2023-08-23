@@ -54,7 +54,6 @@
     }
     .header__menu__bg {
         background: rgba(0, 0, 0, .9);
-        /* height: 380px; */
     }
     .menu__bg__content {
         position: relative;
@@ -76,7 +75,7 @@
     .call__text--link {
         margin: 0;
     }
-    .header__social {
+    .header__social--link {
         display: none;
     }
 }

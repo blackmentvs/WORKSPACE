@@ -341,7 +341,8 @@ body {
 }
 
 .abouts__container {
-    padding: 120px 0;
+    padding: 120px 15px;
+    flex-wrap: wrap-reverse !important;
 }
 
 .abouts--content__text p {
@@ -371,6 +372,7 @@ body {
 
 .features__text {
     background: url(../images/textbg.jpg) center center no-repeat;
+    opacity: 0.9;
     padding: 30px;
     background-size: cover
 }
@@ -390,6 +392,10 @@ body {
 
 .menu__container {
     padding-bottom: 120px;
+}
+
+.menu__item {
+    flex-wrap: wrap !important;
 }
 
 .menu img {

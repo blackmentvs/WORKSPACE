@@ -235,6 +235,10 @@ p:last-child {
     margin-bottom: 0px;
 }
 
+.wrapitem {
+    flex-wrap: wrap !important;
+}
+
 
 /*.home-wrap h1,*/
 
