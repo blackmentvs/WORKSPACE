@@ -58,6 +58,13 @@
     .menu__bg__content {
         position: relative;
     }
+    .menu__images__overlay p.food-price {
+        font-size: 2rem;
+        line-height: 1.5rem;
+    }
+    .food-title {
+        margin-top: 0;
+    }
     .menu__bg--list {
         position: absolute;
         display: none;
@@ -77,5 +84,63 @@
     }
     .header__social--link {
         display: none;
+    }
+    .mobaileapps__text {
+        margin-right: 10px;
+        margin-top: 0;
+    }
+    .mobaileapps__text h1 {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .mobaileapps__text h4 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .mobaileapps__text h1 span {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    .mobaileapps__text a {
+        margin-top: 10px;
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+    .phoneimg1 {
+        display: none;
+    }
+    .phoneimg {
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
+    }
+    .footer__header {
+        font-size: 1.2rem;
+    }
+    .colum__widget {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .footer__address {
+        padding-top: 50px;
+    }
+    .form__widget {
+        display: flex;
+        justify-content: center;
+    }
+    .colum__widget__form {
+        text-align: center;
+    }
+    .submit--btn {
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    .colum__widget__content p {
+        margin-top: 20px;
+    }
+    .footer__socail__icon {
+        margin-top: 30px;
     }
 }

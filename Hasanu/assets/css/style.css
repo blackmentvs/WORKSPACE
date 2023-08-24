@@ -547,12 +547,12 @@ body {
     overflow: hidden;
 }
 
-.footer__address {
+.footer__header {
     font-size: 1.875rem;
     font-family: 'Pacifico', cursive;
 }
 
-.footer__address__contact {
+.footer__header__contact {
     margin-top: 15px;
 }
 
