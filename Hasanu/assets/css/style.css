@@ -101,7 +101,7 @@ body {
 .cart {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -150%;
     width: 400px;
     height: 100vh;
     overflow-y: auto;
@@ -952,32 +952,6 @@ body {
 
 
 /* ---------------- */
-
-
-/* add cart test */
-
-
-/*------------------*/
-
-
-/*------------------*/
-
-.cd-cart--open .cd-cart__checkout em {
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-    transition: padding .2s 0s, -webkit-transform .2s .3s;
-    transition: transform .2s .3s, padding .2s 0s;
-    transition: transform .2s .3s, padding .2s 0s, -webkit-transform .2s .3s
-}
-
-.cd-cart--open .cd-cart__checkout:hover em {
-    padding-right: 30px
-}
-
-.cd-cart--open .cd-cart__checkout:hover .icon {
-    opacity: 1
-}
 
 @-webkit-keyframes cd-qty-enter {
     0% {

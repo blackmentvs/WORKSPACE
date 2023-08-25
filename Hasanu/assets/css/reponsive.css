@@ -24,13 +24,13 @@
     .hide-on-tablet {
         display: none;
     }
-    /* .header__logo {
-        display: none;
-    } */
     .menu__images__overlay {
         width: 85%;
         height: 85%;
         padding: 0;
+    }
+    .food-title {
+        margin-top: 35px;
     }
     .single__menu__text:hover .menu__images__overlay {
         top: 10px;
@@ -62,9 +62,6 @@
         font-size: 2rem;
         line-height: 1.5rem;
     }
-    .food-title {
-        margin-top: 0;
-    }
     .menu__bg--list {
         position: absolute;
         display: none;
@@ -85,6 +82,15 @@
     .header__social--link {
         display: none;
     }
+    /* menu */
+    .food-title {
+        margin-top: 25px;
+        margin-bottom: 13.5px;
+    }
+    .menu__images__overlay p.food-price {
+        margin-bottom: 35px;
+    }
+    /* mobile */
     .mobaileapps__text {
         margin-right: 10px;
         margin-top: 0;
@@ -118,6 +124,7 @@
     }
     .footer__header {
         font-size: 1.2rem;
+        margin-top: 15px;
     }
     .colum__widget {
         padding-top: 0px;
@@ -142,5 +149,11 @@
     }
     .footer__socail__icon {
         margin-top: 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    .menu__images__overlay p.food-price {
+        margin-bottom: 0;
     }
 }
