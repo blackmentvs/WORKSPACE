@@ -2,6 +2,9 @@
     .hide-on-pc {
         display: none;
     }
+    .header__social {
+        text-align: right;
+    }
 }
 
 
@@ -12,17 +15,23 @@
         --header-height: 70px;
         --navbar-height: 0px;
     }
+    .header__social {
+        text-align: right;
+    }
     .hide-on-mobile-tablet {
         display: none;
     }
 }
 
 
-/* Tablet - Pc low  */
+/* Tablet - Pc low resolution  */
 
 @media (min-width: 740px) and (max-width: 1023px) {
     .hide-on-tablet {
         display: none;
+    }
+    .header__social {
+        text-align: center;
     }
     .menu__images__overlay {
         width: 85%;
@@ -42,6 +51,9 @@
     .menu__images__overlay p.food-price {
         font-size: 1.8rem;
         line-height: 2rem;
+    }
+    .footer__socail__icon a i {
+        margin-top: 15px;
     }
 }
 
@@ -150,7 +162,13 @@
     .footer__socail__icon {
         margin-top: 30px;
     }
+    .footer__socail__icon a i {
+        margin-top: 100px;
+    }
 }
+
+
+/* Mobile low resolution */
 
 @media (max-width: 450px) {
     .menu__images__overlay p.food-price {
