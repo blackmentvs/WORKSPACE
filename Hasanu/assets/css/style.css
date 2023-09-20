@@ -394,9 +394,10 @@ body {
     padding-bottom: 120px;
 }
 
-.menu__item {
+
+/* .menu__item {
     flex-wrap: wrap !important;
-}
+} */
 
 .menu img {
     padding-bottom: 8px;
@@ -510,9 +511,11 @@ body {
 }
 
 .mobaileapps__text h1 {
-    font-size: 5rem;
+    font-size: 3.5rem;
+    font-style: oblique;
+    font-weight: normal;
     text-transform: uppercase;
-    color: #fff;
+    color: #d4c5c5;
     line-height: 5rem;
 }
 
@@ -609,16 +612,18 @@ body {
 
 .form__widget {
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .form__feedback {
-    max-width: 90%;
+    /* max-width: 90%; */
     background: #323232;
     color: #cfc8c8;
 }
 
-.form__feedback--textarea {
+.form--textarea {
     height: auto;
+    width: 100%;
 }
 
 
@@ -1203,7 +1208,8 @@ body {
 
 #rating {
     border: none;
-    float: left;
+    display: inline-block;
+    margin-bottom: -15px;
 }
 
 #rating>input {

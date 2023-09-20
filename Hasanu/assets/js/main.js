@@ -238,7 +238,7 @@ function menu(evt, menuName) {
     document.getElementById(menuName).style.display = "block";
     evt.currentTarget.firstElementChild.className += " wide";
 }
-document.getElementById("menu").click();
+// document.getElementById("menu").click();
 //  validator form
 // function validator(options) {
 //     var form = document.querySelector(mainForm.form)
