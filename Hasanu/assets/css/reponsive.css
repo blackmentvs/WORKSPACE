@@ -7,6 +7,27 @@
     }
 }
 
+@media screen and (min-width: 48.0625em) {
+    .sliderview {
+        padding-bottom: 10px;
+        padding-top: 36px;
+        width: 1140px;
+    }
+    .menu-slider__slide {
+        height: 284px;
+        width: 668px;
+    }
+    .thumbnail {
+        padding-bottom: 16px;
+        padding-top: 16px;
+    }
+    .thumbnail__slide {
+        border-radius: 4px;
+        height: 48px !important;
+        width: 114px !important;
+    }
+}
+
 
 /* Mobile & Tablet */
 

@@ -332,6 +332,57 @@ body {
 }
 
 
+/*-------------------- menu show ------------------ */
+
+.menu__slider__slide {
+    position: relative;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.menu-slider {
+    align-content: flex-start;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    touch-action: pan-y;
+    user-select: none;
+    width: 100%;
+}
+
+.menu-slider__slide {
+    border-radius: 20px;
+}
+
+.slider__image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: transparent;
+}
+
+.menu-slider .menu-slider__slide {
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.thumbnail {
+    gap: 12px;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.thumbnail__slide {
+    opacity: 0.6;
+}
+
+
 /*-------------------- abouts ------------------ */
 
 .abouts {
