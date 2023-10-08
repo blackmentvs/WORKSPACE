@@ -1,0 +1,80 @@
+html,
+body {
+    background-color: #1E2E3B;
+    font-size: 15px;
+    color: #565656;
+    width: 100%;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    scroll-behavior: smooth;
+}
+
+.headmenu {
+    margin-top: 50px;
+}
+
+.menu__slider__slide {
+    position: relative;
+    margin-inline: auto;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 36px;
+    width: 1140px;
+}
+
+.menu-slider {
+    display: flex;
+    align-content: flex-start;
+    overflow: hidden;
+    position: relative;
+    touch-action: pan-y;
+    user-select: none;
+    width: 100%;
+    flex-wrap: nowrap
+}
+
+.slider__image {
+    /* position: absolute; */
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: transparent;
+}
+
+.slider__thumbnail {
+    height: 100%;
+    width: 100%;
+}
+
+.menu-slider__slide {
+    border-radius: 20px;
+}
+
+.menu-slider .menu-slider__slide {
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.thumbnail {
+    gap: 12px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    justify-content: center;
+}
+
+.thumbnail__slide {
+    opacity: 0.6;
+}
+
+.active {
+    opacity: 1;
+    outline: rgb(0, 191, 239) solid 2px;
+}

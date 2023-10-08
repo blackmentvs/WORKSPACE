@@ -341,20 +341,22 @@ body {
 }
 
 .menu-slider {
-    align-content: flex-start;
     display: flex;
+    align-content: flex-start;
     overflow: hidden;
     position: relative;
     touch-action: pan-y;
     user-select: none;
     width: 100%;
+    flex-wrap: nowrap
 }
 
 .menu-slider__slide {
     border-radius: 20px;
 }
 
-.slider__image {
+
+/* .slider__image {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -363,7 +365,7 @@ body {
     right: 0;
     bottom: 0;
     color: transparent;
-}
+} */
 
 .menu-slider .menu-slider__slide {
     min-height: 100%;
